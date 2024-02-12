@@ -12,7 +12,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("Fields are incorrect/missing");
   }
 
-  // checking if user exists
+  // tikrinam ar useris egzistuoja
 
   const userExists = await User.findOne({ email });
   if (userExists) {
@@ -20,12 +20,12 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("User already exists");
   }
 
-  // hash password (skliaustuose rasomi kiek papildomu simboliu prideti uzsifruojant)
+  // druskinam slaptazodi (skliaustuose rasomi kiek papildomu simboliu prideti uzsifruojant)
 
   const salt = await bcrypt.genSalt(8);
   const hashedPassword = await bcrypt.hash(password, salt);
 
-  // create user
+  // kuriam useri
 
   const user = await User.create({
     firstname,
@@ -79,4 +79,40 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, loginUser };
+// @desc get user data
+// @route GET /api/users/user
+// @access PRIVATE
+
+// ! PASKUTINI KARTA BAIGTA SU GETAIS
+// const getUser = asyncHandler(async (req, res) => {
+//   res.status(200).json(req.user);
+// });
+
+// @desc get users data
+// @route GET /api/users/list
+// @access PRIVATE
+
+// const getUsers = asyncHandler(async (req, res) => {
+//   const users = await User.aggregate([
+//     {
+//       $lookup: {
+//         from: "accounts",
+//         localField: "_id",
+//         foreignField: "user",
+//         as: "accounts",
+//       },
+//     },
+//     {
+//       $match: {role: {$in: ["paprastas", "admin"]}},
+//     },
+//     {
+//       $unset: [
+//         "password",
+//         "createdAt",
+//         "updatedAt",
+//       ]
+//     }
+//   ]);
+// });
+
+// module.exports = { registerUser, loginUser };

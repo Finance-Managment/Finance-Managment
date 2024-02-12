@@ -16,10 +16,6 @@ const accountSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    currency: {
-      type: String,
-      required: true,
-    },
     status: {
       type: String,
       enum: ["active", "frozen"],
