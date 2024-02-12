@@ -14,6 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 
+app.use("/api/users", require("./routes/userRoutes"));
+
 app.listen(process.env.PORT, () =>
   console.log(`server is running on port ${process.env.PORT}`),
 );

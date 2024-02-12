@@ -9,7 +9,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const { firstname, email, password } = req.body;
   if (!firstname || !email || !password) {
     res.status(400);
-    throw new Error("Please add all fields");
+    throw new Error("Fields are incorrect/missing");
   }
 
   // checking if user exists
@@ -30,7 +30,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const user = await User.create({
     firstname,
     email,
-    passord: hashedPassword,
+    password: hashedPassword,
   });
 
   if (user) {
@@ -78,3 +78,5 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid credentials");
   }
 });
+
+module.exports = { registerUser, loginUser };
