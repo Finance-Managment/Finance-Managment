@@ -57,7 +57,8 @@ const generateToken = (id) => {
   });
 };
 
-// @ route POST /api/users/login - paimam duomenis is suserio ir siunciam i DB pasitikrint ar toks useris yra
+// @ route POST /api/users/login
+//- paimam duomenis is suserio ir siunciam i DB pasitikrint ar toks useris yra
 
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -83,36 +84,40 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route GET /api/users/user
 // @access PRIVATE
 
-// ! PASKUTINI KARTA BAIGTA SU GETAIS
-// const getUser = asyncHandler(async (req, res) => {
-//   res.status(200).json(req.user);
-// });
+const getUser = asyncHandler(async (req, res) => {
+  res.status(200).json(req.user);
+});
 
 // @desc get users data
 // @route GET /api/users/list
 // @access PRIVATE
 
-// const getUsers = asyncHandler(async (req, res) => {
-//   const users = await User.aggregate([
-//     {
-//       $lookup: {
-//         from: "accounts",
-//         localField: "_id",
-//         foreignField: "user",
-//         as: "accounts",
-//       },
-//     },
-//     {
-//       $match: {role: {$in: ["paprastas", "admin"]}},
-//     },
-//     {
-//       $unset: [
-//         "password",
-//         "createdAt",
-//         "updatedAt",
-//       ]
-//     }
-//   ]);
-// });
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.aggregate([
+    {
+      $lookup: {
+        from: "accounts",
+        localField: "_id",
+        foreignField: "user",
+        as: "accounts",
+      },
+    },
+    {
+      $match: { role: { $in: ["paprastas", "admin"] } },
+    },
+    {
+      $unset: [
+        "password",
+        "createdAt",
+        "updatedAt",
+        "acoounts.createdAt",
+        "accounts.updatedAt",
+        "accounts.__v",
+        "__v",
+      ],
+    },
+  ]);
+  res.status(200).json(users);
+});
 
-// module.exports = { registerUser, loginUser };
+module.exports = { registerUser, loginUser, getUser, getUsers };
