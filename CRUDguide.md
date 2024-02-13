@@ -103,6 +103,6 @@ Prieš naudojant, užtikrinkite, kad būtų paleistas serveris: `npm run start`
   - Value: Bearer + jwtToken (gaunamas prisijungiant)
 - Kam leidžiama ši operacija: visiems
 
-## [Screenshotu su testavimu rasti](https://docs.google.com/presentation/d/1QaUpaLDVA9Na-2hCP99Sl070LJfxaonmJ60svLGtbis/edit#slide=id.g2aafeda88d4_0_0)
+## [>> Screenshotai su testavimu <<](https://docs.google.com/presentation/d/1QaUpaLDVA9Na-2hCP99Sl070LJfxaonmJ60svLGtbis/edit#slide=id.g2aafeda88d4_0_0)
 
 -- kestulka
