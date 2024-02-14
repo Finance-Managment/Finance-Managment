@@ -16,8 +16,6 @@ This is a comprehensive full-stack finance management web app designed to empowe
 
 ## Tech Stack
 
-## Tech Stack
-
 - **Frontend:** Vanilla JavaScript for a lightweight and customizable user interface.
 - **Backend:** Node.js with Express for API development.
 - **Database:** mongodb for efficient and scalable data storage.
