@@ -1,6 +1,13 @@
 <!-- @format -->
 !!!!!!!!!!!!!!!!!!!!!!!!!!!PRIES PRADEDANT VISI PRIVALO SUSIPAZINTI SU VISAIS MD FAILAIS!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# Finance Management Web App
+## External links:
+
+https://discord.gg/pm33DR8N
+https://lucid.app/lucidchart/38e32648-0336-48fe-95b8-4e7340d20782/edit?invitationId=inv_984ec529-6d0f-405d-900b-e77c78c352bd
+https://trello.com/invite/b/F10XftGi/ATTIa2aee3852d31d0626b298a61f4fb88913F80C01F/finance-managment
+https://remixicon.com
+
+# Finance Management Web App #
 
 ## Overview
 
