@@ -2,10 +2,10 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!PRIES PRADEDANT VISI PRIVALO SUSIPAZINTI SU VISAIS MD FAILAIS!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ## External links:
 
-https://discord.gg/pm33DR8N
-https://lucid.app/lucidchart/38e32648-0336-48fe-95b8-4e7340d20782/edit?invitationId=inv_984ec529-6d0f-405d-900b-e77c78c352bd
-https://trello.com/invite/b/F10XftGi/ATTIa2aee3852d31d0626b298a61f4fb88913F80C01F/finance-managment
-https://remixicon.com
+- https://discord.gg/pm33DR8N
+- https://lucid.app/lucidchart/38e32648-0336-48fe-95b8-4e7340d20782/edit?invitationId=inv_984ec529-6d0f-405d-900b-e77c78c352bd
+- https://trello.com/invite/b/F10XftGi/ATTIa2aee3852d31d0626b298a61f4fb88913F80C01F/finance-managment
+- https://remixicon.com
 
 # Finance Management Web App #
 
@@ -47,17 +47,17 @@ This is a comprehensive full-stack finance management web app designed to empowe
 
 ## Contributors
 
-UGNIUS USCILAS
-KESTUTIS GIRDZIUNA
-LUKAS LAPIENIS
-KAROLIS LAPIENIS
-LAURYNAS JOKSA
-LAURYNAS SAPNAGIS
-MATAS NACEVICIUS
-MANTAS SAPARAVICIUS
-MONIKA
-JUSTINAS ASTASOVAS
-GRANTAS ADOMAITIS
+- UGNIUS USCILAS
+- KESTUTIS GIRDZIUNA
+- LUKAS LAPIENIS
+- KAROLIS LAPIENIS
+- LAURYNAS JOKSA
+- LAURYNAS SAPNAGIS
+- MATAS NACEVICIUS
+- MANTAS SAPARAVICIUS
+- MONIKA
+- JUSTINAS ASTASOVAS
+- GRANTAS ADOMAITIS
 
 ## Issues and Bug Reporting
 
