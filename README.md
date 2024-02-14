@@ -10,12 +10,9 @@ This is a comprehensive full-stack finance management web app designed to empowe
 
 - **User Authentication:** Secure user registration and login system with password encryption.
 - **Dashboard:** Get a holistic overview of financial status, including income, expenses, and savings. Customize the dashboard based on personal preferences.
-- **Transaction Management:** Effortlessly add, edit, and delete transactions. Categorize transactions for detailed financial insights.
-- **Budgeting:** Set and track monthly budgets for different categories. Visualize budget versus actual spending with interactive charts.
-- **Reports:** Generate detailed financial reports for specified time periods. Analyze income, expenses, and trends to make informed financial decisions.
+- **Budgeting:** Effortlessly add, edit, and delete transactions. Categorize transactions for detailed financial insights.
+- **Reports:** Generate financial reports, that includes finacial advices
 - **Goal Setting:** Define and monitor financial goals such as savings targets, debt reduction, and investment milestones. Receive notifications upon goal achievements.
-- **Investment Tracking:** Keep an eye on personal investments with real-time market data integration. Track portfolio performance and asset allocation.
-- **Reminders:** Set timely reminders for upcoming bills, payments, or financial tasks. Stay organized and avoid missing important deadlines.
 
 ## Tech Stack
 
@@ -23,8 +20,8 @@ This is a comprehensive full-stack finance management web app designed to empowe
 
 - **Frontend:** Vanilla JavaScript for a lightweight and customizable user interface.
 - **Backend:** Node.js with Express for API development.
-- **Database:** SQL for efficient and scalable data storage.
-- **Authentication:** (Currently under consideration, specify if not decided yet).
+- **Database:** mongodb for efficient and scalable data storage.
+- **Authentication:** log in.
 
 ## Installation
 
