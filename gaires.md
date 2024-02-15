@@ -10,22 +10,31 @@
 2. **Sąskaitų valdymas:**
 
    - Vartotojai gali peržiūrėti savo sąskaitų likučius ir sąskaitos išrašus.
-   - Sistema turi leisti vartotojams atlikti pavedimus tarp savo sąskaitų arba į kitas vartotojų sąskaitas.
    - Vartotojai gali užšaldyti arba atšaukti savo sąskaitas.
 
-3. **Pavedimų vykdymas:**
-
-   - Sistema turi užtikrinti, kad pavedimai būtų vykdomi tik su tinkamais autentifikacijos duomenimis ir patikrinti, ar sąskaitos turi pakankamai lėšų pavedimui atlikti.
-   - Pavedimai turi būti įrašomi į transakcijų žurnalą ir suteikti vartotojams galimybę peržiūrėti savo pavedimų istoriją.
-
-4. **Duomenų saugumas:**
+3. **Duomenų saugumas:**
 
    - Visi vartotojų duomenys, įskaitant prisijungimo informaciją ir finansinius duomenis, turi būti saugomi šifruotu formatu.
    - Sistema turi turėti atitinkamus apsaugos mechanizmus, kad būtų išvengta neautorizuoto prieigos prie vartotojų duomenų.
 
-5. **Pranešimų ir perspėjimų sistema:**
-   - Sistema turi turėti pranešimų sistemą, kuri informuotų vartotojus apie svarbius įvykius, tokius kaip įvykę pavedimai, būtinų veiksmų reikalavimai ir kt.
+4. **Pranešimų ir perspėjimų sistema:**
+   - Sistema turi turėti pranešimų sistemą, kuri informuotų vartotojus apie svarbius įvykius, tokius kaip įvykusius pakitimus sąskaitos balanse, būtinų veiksmų reikalavimai ir kt.
    - Vartotojai gali pasirinkti, kaip nori gauti pranešimus: el. paštu, SMS žinutėmis arba tiesiogiai per sistemos sąsają.
+
+5. **Biudžetavimas:**
+- Galimybė nustatyti mėnesinį arba metinį biudžetą.
+- Stebėti biudžeto įvykdymą ir gauti įspėjimus, kai artėja biudžeto limitai.
+
+6. **Investijos:**
+- Vartotojas, gali pasirinkti iš 5 vietų kur nori investuoti. 
+- Jis gali įvestit kiek nori investuoti.
+- Pagal metines palūkanas (galima savo nuožiura) kaupti jo investicinį uždarbį.
+- Vartotojas privalo tūrėti galimybę pinigus esančius toje sąskaitoje, pasidėti į pagrindinę vartotojo sąskaitą.
+
+5. **Rekomendacijos ir pasiūlymai:**
+- Vartotojas gautų kas kažkiek laiko rekomendaciją: investuoti, taupyti, pasilepinti ir pnš.
+
+
 
 ## User Stories
 
@@ -37,16 +46,19 @@
 2. **Vartotojas nori peržiūrėti sąskaitos likutį:**
 
    - Kaip vartotojas, noriu matyti savo sąskaitos likutį pagrindiniame ekrane, kad galėčiau greitai sužinoti, kiek pinigų turėčiau.
+ - Kaip vartotojas, noriu saskaitos likutį matyti skrituline arba paprasta diagrama. Kategorijos turėtų būti nustatytos pagal spalvą.
+   
 
-3. **Vartotojas nori atlikti pavedimą:**
-
-   - Kaip vartotojas, noriu turėti galimybę peržiūrėti sąrašą su sąskaitomis, į kurias galiu atlikti pavedimą, kad galėčiau pasirinkti tinkamą sąskaitą.
-   - Kaip vartotojas, noriu įvesti pavedimo sumą ir gauti patvirtinimą, kad pavedimas buvo sėkmingai įvykdytas.
-
-4. **Administratorius nori užšaldyti sąskaitą:**
+3. **Administratorius nori užšaldyti sąskaitą:**
 
    - Kaip administratorius, noriu turėti galimybę užšaldyti vartotojo sąskaitą, jei pastebiu neįprastą veiklą ar įtarimų dėl sukčiavimo.
    - Kaip administratorius, noriu turėti prieigą prie sąrašo su užšaldytomis sąskaitomis, kad galėčiau juos peržiūrėti ir priimti atitinkamus veiksmus.
 
-5. **Vartotojas nori gauti pranešimą apie sėkmingą pavedimą:**
-   - Kaip vartotojas, noriu gauti pranešimą, kai mano pavedimas buvo sėkmingai įvykdytas, kad galėčiau būti tikras, jog pinigai buvo pervesti į tinkamą sąskaitą.
+4. **Vartotojas nori gauti pranešimą apie sėkmingą pirkimą:**
+   - Kaip vartotojas, noriu gauti pranešimą, kai mano pirkimas buvo sėkmingai įvykdytas, kad galėčiau būti tikras, jog pinigai paliko mano sąskaitą.
+
+5. **Vartotojas nori valdyti savo biudžetą**
+- Kaip vartotojas, noriu turėti galimybę nustatyti savo mėnesinį arba metinį biudžetą ir matyti kiek jo liko (metinio ar mėnesinio biudžeto).
+- Stebėti biudžeto įvykdymą ir gauti įspėjimus, kai artėja biudžeto limitai. 
+
+
