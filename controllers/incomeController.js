@@ -1,10 +1,10 @@
-// User story: Vartotojas gauna forma uzpildyti gautu pajamu forma, kurioje:
+// !User story: Vartotojas gauna forma uzpildyti gautu pajamu forma, kurioje:
 // 1. is dropdown pasirenka kategorija, is kurios gavo pajamas
 // 2. iraso skaiciu kiek pinigu gavo
 // 3. laukelyje gali pasilikti sau uzrasa.
 // 4. vartotojas paspaudzia submit mygtuka, ir si forma ikrenta i mongoDB kolekcija pas useri.
 
-// Extra:
+// !Extra:
 // Vartotojas gales redaguoti/istrinti savo forma po jos pateikimo
 
 // ! AI generuotas pavyzdys kaip mazdaug atrodys controleris:
