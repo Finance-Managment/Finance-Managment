@@ -52,7 +52,7 @@ Prieš naudojant, užtikrinkite, kad būtų paleistas serveris: `npm run start`
 
 #### Gauti visus vartotojus ir jų duomenis:
 
-- Metodas: POST
+- Metodas: GET
 - Adresas: http://localhost:3000/api/users/list
 - Headers:
   - Key: authorization

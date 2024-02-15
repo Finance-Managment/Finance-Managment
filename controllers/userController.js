@@ -71,6 +71,7 @@ const loginUser = asyncHandler(async (req, res) => {
       _id: user.id,
       firstname: user.firstname,
       email: user.email,
+      role: user.role,
       // svarbu, kad sugriztu token, kuris sukuriamas
       token: generateToken(user._id),
     });
