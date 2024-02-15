@@ -2,154 +2,219 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
 
-  <!--=============== FAVICON ===============-->
-  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
 
-  <!--=============== REMIXICONS ===============-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./front/css/style.css" />
 
-  <!--=============== CSS ===============-->
-  <link rel="stylesheet" href="./front/css/style.css" />
+    <title>Financer</title>
+  </head>
 
-  <title>Financer</title>
-</head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">Financer</a>
 
-<body>
-  <!--==================== HEADER ====================-->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="nav__logo">Financer</a>
-
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="about.html" class="nav__link">About Us</a>
-          </li>
-          <li class="nav__item">
-            <a href="contact.html" class="button">Contact Us</a>
-          </li>
-        </ul>
-        <!-- Close button -->
-        <div class="nav__close" id="nav-close">
-          <i class="ri-close-line"></i>
-        </div>
-      </div>
-      <div class="nav__actions"></div>
-      <!-- Theme button -->
-      <i class="ri-moon-line change-theme" id="theme-button"></i>
-      <!-- Toggle button-->
-      <div class="nav__toggle" id="nav-toggle">
-        <i class="ri-apps-2-line"></i>
-      </div>
-    </nav>
-  </header>
-
-  <!--==================== MAIN ====================-->
-  <main class="main">
-    <!--==================== HOME ====================-->
-    <section class="home section">
-      <div class="home__rectangle"></div>
-
-      <div class="home__container container grid">
-        <div class="home__content grid">
-          <div class="home__data grid">
-            <div class="contact__page container grid">
-              <!-- =========== LOGIN FORM========== -->
-              <form action="" class="contact__form grid login__form" id="loginForm">
-                <h2 class="section__title">Login</h2>
-                <div class="contact__box">
-                  <input type="email" name="email" id="loginFormEmailInput" required placeholder="Write your email"
-                    class="contact__input" />
-                  <label for="email" class="contact__label">Email</label>
-                </div>
-                <div class="contact__box">
-                  <input type="password" name="password" id="loginFormPasswordInput" required
-                    placeholder="Write your password" class="contact__input" />
-                  <label for="password" class="contact__label">Password</label>
-                </div>
-                <button type="submit" id="loginFormSubmit" class="contact__send button">
-                  Login
-                </button>
-              </form>
-              <!-- =========== SIGNUP FORM========== -->
-              <form action="" class="contact__form grid signup__form" id="signupForm">
-                <h2 class="section__title">Sign Up</h2>
-                <div class="contact__box">
-                  <input type="name" name="name" id="signupFormNameInput" required placeholder="Write your name"
-                    class="contact__input" />
-                  <label for="name" class="contact__label">Name</label>
-                </div>
-                <div class="contact__box">
-                  <input type="email" name="email" id="signupFormEmailInput" required placeholder="Write your email"
-                    class="contact__input" />
-                  <label for="email" class="contact__label">Email</label>
-                </div>
-                <div class="contact__box">
-                  <input type="password" name="password" id="signupFormPasswordInput" required
-                    placeholder="Write your password" class="contact__input" />
-                  <label for="password" class="contact__label">Password</label>
-                </div>
-                <button type="submit" id="signupFormSubmit" class="contact__send button">
-                  Sign Up
-                </button>
-              </form>
-            </div>
-
-
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="about.html" class="nav__link">About Us</a>
+            </li>
+            <li class="nav__item">
+              <a href="contact.html" class="button">Contact Us</a>
+            </li>
+          </ul>
+          <!-- Close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
           </div>
         </div>
-
-      </div>
-    </section>
-    <!--==================== WORK ====================-->
-
-    <!--==================== CONTACT ====================-->
-    <section class="contact section">
-      <div class="contact__container container grid">
-        <h2 class="section__title">
-          Let's Talk <br />
-          About Your Problems
-        </h2>
-
-        <a href="./contact.html" class="contact__button button">Contact Me</a>
-      </div>
-    </section>
-  </main>
-
-  <!--==================== FOOTER ====================-->
-  <footer class="footer">
-    <div class="footer__container container grid">
-      <div class="footer__content grid">
-        <a href="index.html" class="footer__logo">Financer</a>
-        <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">About Us</a></li>
-          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
-        </ul>
-        <div class="footer__social">
-          <a href="" target="_blank" class="footer__social-link"><i class="ri-facebook-circle-fill"></i></a>
-          <a href="" target="_blank" class="footer__social-link"><i class="ri-instagram-line"></i></a>
-          <a href="" target="_blank" class="footer__social-link"><i class="ri-meta-line"></i></a>
-          <a href="" target="_blank" class="footer__social-link"><i class="ri-twitter-x-line"></i></a>
+        <div class="nav__actions"></div>
+        <!-- Theme button -->
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+        <!-- Toggle button-->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-apps-2-line"></i>
         </div>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section">
+        <div class="home__rectangle"></div>
+
+        <div class="home__container container grid">
+          <div class="home__content grid">
+            <div class="home__data">
+              <div class="contact__page container grid">
+                <!-- =========== LOGIN FORM========== -->
+                <form
+                  action=""
+                  class="contact__form grid login__form"
+                  id="loginForm"
+                >
+                  <h2 class="section__title">Login</h2>
+                  <div class="contact__box">
+                    <input
+                      type="email"
+                      name="email"
+                      id="loginFormEmailInput"
+                      required
+                      placeholder="Write your email"
+                      class="contact__input"
+                    />
+                    <label for="email" class="contact__label">Email</label>
+                  </div>
+                  <div class="contact__box">
+                    <input
+                      type="password"
+                      name="password"
+                      id="loginFormPasswordInput"
+                      required
+                      placeholder="Write your password"
+                      class="contact__input"
+                    />
+                    <label for="password" class="contact__label"
+                      >Password</label
+                    >
+                  </div>
+                  <button
+                    type="submit"
+                    id="loginFormSubmit"
+                    class="contact__send button btn"
+                  >
+                    Login
+                  </button>
+                </form>
+                <!-- =========== SIGNUP FORM========== -->
+                <form
+                  action=""
+                  class="contact__form grid signup__form"
+                  id="signupForm"
+                >
+                  <h2 class="section__title">Sign Up</h2>
+                  <div class="contact__box">
+                    <input
+                      type="name"
+                      name="name"
+                      id="signupFormNameInput"
+                      required
+                      placeholder="Write your name"
+                      class="contact__input"
+                    />
+                    <label for="name" class="contact__label">Name</label>
+                  </div>
+                  <div class="contact__box">
+                    <input
+                      type="email"
+                      name="email"
+                      id="signupFormEmailInput"
+                      required
+                      placeholder="Write your email"
+                      class="contact__input"
+                    />
+                    <label for="email" class="contact__label">Email</label>
+                  </div>
+                  <div class="contact__box">
+                    <input
+                      type="password"
+                      name="password"
+                      id="signupFormPasswordInput"
+                      required
+                      placeholder="Write your password"
+                      class="contact__input"
+                    />
+                    <label for="password" class="contact__label"
+                      >Password</label
+                    >
+                  </div>
+                  <button
+                    type="submit"
+                    id="signupFormSubmit"
+                    class="contact__send button"
+                  >
+                    Sign Up
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--==================== WORK ====================-->
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section">
+        <div class="contact__container container grid">
+          <h2 class="section__title">
+            Let's Talk <br />
+            About Your Problems
+          </h2>
+
+          <a href="./contact.html" class="contact__button button">Contact Me</a>
+        </div>
+      </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div class="footer__content grid">
+          <a href="index.html" class="footer__logo">Financer</a>
+          <ul class="footer__links">
+            <li>
+              <a href="about.html" class="footer__link">About Us</a>
+            </li>
+            <li>
+              <a href="contact.html" class="footer__link">Contact Us</a>
+            </li>
+          </ul>
+          <div class="footer__social">
+            <a href="" target="_blank" class="footer__social-link"
+              ><i class="ri-facebook-circle-fill"></i
+            ></a>
+            <a href="" target="_blank" class="footer__social-link"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="" target="_blank" class="footer__social-link"
+              ><i class="ri-meta-line"></i
+            ></a>
+            <a href="" target="_blank" class="footer__social-link"
+              ><i class="ri-twitter-x-line"></i
+            ></a>
+          </div>
+        </div>
+        <span class="footer__copy"
+          >&#169; All Rights Reserved By Financer Team
+        </span>
       </div>
-      <span class="footer__copy">&#169; All Rights Reserved By Financer Team
-      </span>
-    </div>
-  </footer>
+    </footer>
 
-  <!--========== SCROLL UP ==========-->
-  <a href="" class="scrollup" id="scroll-up">
-    <i class="ri-arrow-up-line"></i>
-  </a>
-  <!--=============== MAIN JS ===============-->
-  <script src="front/js/main.js"></script>
-  <!--=============== INDEX JS ===============-->
-  <script src="front/js/index.js"></script>
-</body>
-
+    <!--========== SCROLL UP ==========-->
+    <a href="" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+    <!--=============== MAIN JS ===============-->
+    <script src="front/js/main.js"></script>
+    <!--=============== INDEX JS ===============-->
+    <script src="front/js/index.js"></script>
+  </body>
 </html>
