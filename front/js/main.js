@@ -62,3 +62,27 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+//this is signup form animation
+const topLogin = document.querySelector("#loginForm>h2")
+const formLogin = document.querySelector("#loginForm")
+topLogin.style.cursor="pointer"
+formLogin.style.height="45px"
+topLogin.addEventListener("click",(ev)=>{
+    if(formLogin.style.height==="45px"){
+        formLogin.style.height="90%"
+        formLogin.style.bottom="0px"
+    }else{
+        formLogin.style.height="45px"
+    }
+})
+const topSignup = document.querySelector("#signupForm>h2")
+topSignup.style.cursor="pointer"
+topSignup.addEventListener("click", (ev)=>{
+    if(formLogin.style.height==="45px"){
+        formLogin.style.height="90%"
+        formLogin.style.bottom="0px"
+    }else{
+        formLogin.style.height="45px"
+    }
+})
