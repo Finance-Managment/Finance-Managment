@@ -1,0 +1,201 @@
+const User = require('../models/User')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
+const asyncHandler = require('express-async-handler')
+
+// @route POST /api/users
+
+const registerUser = asyncHandler(async (req, res) => {
+    const { firstname, email, password } = req.body
+    if (!firstname || !email || !password) {
+        res.status(400)
+        throw new Error('Fields are incorrect/missing')
+    }
+
+    // tikrinam ar useris egzistuoja
+
+    const userExists = await User.findOne({ email })
+    if (userExists) {
+        res.status(400)
+        throw new Error('User already exists')
+    }
+
+    // druskinam slaptazodi (skliaustuose rasomi kiek papildomu simboliu prideti uzsifruojant)
+
+    const salt = await bcrypt.genSalt(8)
+    const hashedPassword = await bcrypt.hash(password, salt)
+
+    // kuriam useri
+
+    const user = await User.create({
+        firstname,
+        email,
+        password: hashedPassword,
+    })
+
+    if (user) {
+        res.status(201).json({
+            // sukuriamas json objektas, kuris yra siunciamas response i client
+            _id: user.id,
+            firstname: user.firstname,
+            email: user.email,
+            token: generateToken(user._id),
+            role: user.role,
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid user data')
+    }
+})
+
+// generate jwt: imamas userio id ir prie jo pridedama uzkodavimo druskyte
+// papildomas dalykas, kad butu neimanoma atkoduoti is .env failo
+
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: '30d',
+    })
+}
+
+// @ route POST /api/users/login
+//- paimam duomenis is suserio ir siunciam i DB pasitikrint ar toks useris yra
+
+const loginUser = asyncHandler(async (req, res) => {
+    const { email, password } = req.body
+
+    const user = await User.findOne({ email })
+
+    // user.password - is db uzkoduotas password, lygina login'e ivesta passworda su db esanciu uzkoduotu passwordu
+    if (user && (await bcrypt.compare(password, user.password))) {
+        res.json({
+            _id: user.id,
+            firstname: user.firstname,
+            email: user.email,
+            // svarbu, kad sugriztu token, kuris sukuriamas
+            token: generateToken(user._id),
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid credentials')
+    }
+})
+
+// @desc get user data
+// @route GET /api/users/user
+// @access PRIVATE
+
+const getUser = asyncHandler(async (req, res) => {
+    res.status(200).json(req.user)
+})
+
+// @desc get users data
+// @route GET /api/users/list
+// @access PRIVATE
+
+// const getUsers = asyncHandler(async (req, res) => {
+//   const users = await User.aggregate([
+//     {
+//       $lookup: {
+//         from: "accounts",
+//         localField: "_id",
+//         foreignField: "user",
+//         as: "accounts",
+//       },
+//     },
+//     {
+//       $match: { role: { $in: ["paprastas", "admin"] } },
+//     },
+//     {
+//       $unset: [
+//         "password",
+//         "createdAt",
+//         "updatedAt",
+//         "acoounts.createdAt",
+//         "accounts.updatedAt",
+//         "accounts.__v",
+//         "__v",
+//       ],
+//     },
+//   ]);
+//   res.status(200).json(users);
+// });
+
+////////////////////////////////////////////////////////
+//@description -- Update user
+//@route PUT /api/users/:id
+//@access PRIVATE
+
+const updateUser = asyncHandler(async (req, res) => {
+    const userId = req.params.id
+    const { firstname, email, password } = req.body
+
+    const user = await User.findById(userId)
+
+    if (!user) {
+        res.status(400)
+        throw new Error('user not found')
+    }
+
+    user.firstname = firstname || user.firstname
+    user.email = email || user.email
+
+    if (password) {
+        const salt = await bcrypt.genSalt(8)
+        user.password = await bcrypt.hash(password, salt)
+    }
+    const updatedUser = await user.save()
+
+    res.json({
+        _id: updatedUser._id,
+        firstname: updatedUser.firstname,
+        email: updatedUser.email,
+        token: generateToken(updatedUser._id),
+        role: updatedUser.role,
+    })
+})
+
+//@description Delete a user
+//@route DELETE /api/users/:id
+//@access PRIVATE
+
+const deleteUser = asyncHandler(async (req, res) => {
+    const userId = req.params.id
+
+    const user = await User.findByIdAndDelete(userId)
+
+    if (!user) {
+        res.status(400)
+        throw new Error('user not found')
+    }
+
+    res.json({ message: 'user has been removed' })
+})
+
+////////////////////////////////////////
+// Get user with specific categories
+
+const userOutcomes = async function (req, res) {
+    const userWithCategories = await User.aggregate([
+        {
+            $lookup: {
+                from: 'categories',
+                localField: '_id',
+                foreignField: 'user_categories',
+                as: 'categories',
+            },
+        },
+    ])
+    if (!userWithCategories) {
+        res.status(404).send("User wasn't found")
+    }
+    res.status(200).json(userWithCategories)
+}
+
+module.exports = {
+    registerUser,
+    loginUser,
+    getUser,
+    updateUser,
+    deleteUser,
+    userOutcomes,
+}
