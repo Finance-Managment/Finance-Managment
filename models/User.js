@@ -19,6 +19,8 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: 'paprastas',
         },
+        incomes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Income' }],
+        outcomes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Outcome' }],
     },
     {
         timestamps: true,
