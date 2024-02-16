@@ -88,36 +88,4 @@ const getUser = asyncHandler(async (req, res) => {
     res.status(200).json(req.user)
 })
 
-// @desc get users data
-// @route GET /api/users/list
-// @access PRIVATE
-
-const getUsers = asyncHandler(async (req, res) => {
-    const users = await User.aggregate([
-        {
-            $lookup: {
-                from: 'accounts',
-                localField: '_id',
-                foreignField: 'user',
-                as: 'accounts',
-            },
-        },
-        {
-            $match: { role: { $in: ['paprastas', 'admin'] } },
-        },
-        {
-            $unset: [
-                'password',
-                'createdAt',
-                'updatedAt',
-                'acoounts.createdAt',
-                'accounts.updatedAt',
-                'accounts.__v',
-                '__v',
-            ],
-        },
-    ])
-    res.status(200).json(users)
-})
-
-module.exports = { registerUser, loginUser, getUser, getUsers }
+module.exports = { registerUser, loginUser, getUser }

@@ -16,8 +16,17 @@ app.use(express.urlencoded({ extended: false }))
 
 // routes
 
+// users
 app.use('/api/users', require('./routes/userRoutes'))
-app.use('/api/accounts', require('./routes/accountRoutes'))
+
+// incomes
+
+app.use('/api/incomes', require('./routes/incomeRoutes'))
+
+// outcomes
+
+app.use('/api/outcomes', require('./routes/outcomeRoutes'))
+
 app.use(errorHandler)
 
 app.listen(process.env.PORT, () =>
