@@ -15,7 +15,7 @@ const incomeSchema = new mongoose.Schema(
                 'Freelance',
                 'Rent',
                 'Royalties',
-                'Other', // fronte bus dropdownas, kur useris is sito saraso pasirinks
+                'Other',
             ],
             required: true,
         },

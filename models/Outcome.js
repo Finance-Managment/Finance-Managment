@@ -17,7 +17,7 @@ const outcomeSchema = new mongoose.Schema(
                 'Healthcare',
                 'Education',
                 'Debt',
-                'Other', // fronte bus dropdownas, kur useris is sito saraso pasirinks
+                'Other',
             ],
             required: true,
         },
