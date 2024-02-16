@@ -63,23 +63,6 @@ loginFormSubmit.addEventListener('click', (event) => {
                                 const userAccounts =
                                     document.createElement('div')
                                 userAccounts.className = 'account__info'
-                                const divider = document.createElement('div')
-                                divider.innerText = 'Account:'
-                                el.accounts.forEach((el) => {
-                                    const accountNumber =
-                                        document.createElement('div')
-                                    accountNumber.innerText = el.accountNumber
-                                    const balance =
-                                        document.createElement('div')
-                                    balance.innerText = `${el.balance} eur.`
-                                    const status = document.createElement('div')
-                                    status.innerText = el.status
-                                    userAccounts.append(
-                                        accountNumber,
-                                        balance,
-                                        status
-                                    )
-                                })
                                 const removeButton =
                                     document.createElement('button')
                                 removeButton.innerText = 'Remove'
@@ -93,7 +76,6 @@ loginFormSubmit.addEventListener('click', (event) => {
                                 userCard.append(
                                     userName,
                                     userEmail,
-                                    divider,
                                     userAccounts,
                                     removeButton
                                 )
