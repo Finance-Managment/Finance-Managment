@@ -135,4 +135,43 @@ const deleteUser = asyncHandler(async (req, res) => {
     res.json({ message: 'user has been removed' })
 })
 
-module.exports = { registerUser, loginUser, getUser, updateUser, deleteUser }
+// @desc get users data
+// @route GET /api/users/list
+// @access PRIVATE
+
+const getAllUsers = asyncHandler(async (req, res) => {
+    const users = await User.aggregate([
+        {
+            $lookup: {
+                from: 'accounts',
+                localField: '_id',
+                foreignField: 'user',
+                as: 'accounts',
+            },
+        },
+        {
+            $match: { role: { $in: ['paprastas', 'admin'] } },
+        },
+        {
+            $unset: [
+                'password',
+                'createdAt',
+                'updatedAt',
+                'acoounts.createdAt',
+                'accounts.updatedAt',
+                'accounts.__v',
+                '__v',
+            ],
+        },
+    ])
+    res.status(200).json(users)
+})
+
+module.exports = {
+    registerUser,
+    loginUser,
+    getUser,
+    updateUser,
+    deleteUser,
+    getAllUsers,
+}
