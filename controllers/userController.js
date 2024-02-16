@@ -62,11 +62,13 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const user = await User.findOne({ email })
 
+    // user.password - is db uzkoduotas password, lygina login'e ivesta passworda su db esanciu uzkoduotu passwordu
     if (user && (await bcrypt.compare(password, user.password))) {
         res.json({
             _id: user.id,
             firstname: user.firstname,
             email: user.email,
+            role: user.role,
             token: generateToken(user._id),
         })
     } else {
@@ -133,4 +135,20 @@ const deleteUser = asyncHandler(async (req, res) => {
     res.json({ message: 'user has been removed' })
 })
 
-module.exports = { registerUser, loginUser, getUser, updateUser, deleteUser }
+// @desc get users data
+// @route GET /api/users/users
+// @access PRIVATE
+
+const getAllUsers = asyncHandler(async (req, res) => {
+    const users = await User.find()
+    res.status(200).json(users)
+})
+
+module.exports = {
+    registerUser,
+    loginUser,
+    getUser,
+    updateUser,
+    deleteUser,
+    getAllUsers,
+}

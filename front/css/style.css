@@ -363,6 +363,29 @@ body.dark-theme {
     font-weight: var(--font-semi-bold);
     color: var(--title-color);
 }
+/*=============== DASHBOARD ===============*/
+.user__card {
+  padding: 5px;
+  margin: 5px;
+  border: 3px solid var(--first-color);
+  border-radius: 5px;
+  background-color: var(--container-color);
+}
+.account__info {
+  margin-left: 20px;
+}
+.remove__button {
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 2px 5px;
+  background-color: crimson;
+}
+.remove__button:hover {
+  scale: 1.05;
+}
+.remove__button:active {
+  scale: 0.95;
+}
 /*=============== FOOTER ===============*/
 .footer {
     background-color: var(--first-color);
