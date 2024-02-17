@@ -9,7 +9,6 @@ loginFormSubmit.addEventListener('click', (event) => {
         const passwordInput = document.getElementById(
             'loginFormPasswordInput'
         ).value
-        console.log(emailInput, passwordInput)
         const response = await fetch('http://localhost:3000/api/users/login', {
             method: 'POST',
             headers: {
@@ -24,8 +23,6 @@ loginFormSubmit.addEventListener('click', (event) => {
             console.log('Netinkama informacija')
         } else {
             const data = await response.json()
-            console.log(data)
-            console.log('viskas ok')
             document.getElementById('loginForm').remove()
             if (data.role == 'admin') {
                 const section = document.querySelector('.section')
@@ -34,7 +31,6 @@ loginFormSubmit.addEventListener('click', (event) => {
                 getUsersButton.className = 'button'
                 section.append(getUsersButton)
                 getUsersButton.addEventListener('click', (event) => {
-                    console.log(data.token)
                     const getAllUsers = async () => {
                         const adminResponse = await fetch(
                             'http://localhost:3000/api/users/users',
@@ -63,6 +59,7 @@ loginFormSubmit.addEventListener('click', (event) => {
                                 const userAccounts =
                                     document.createElement('div')
                                 userAccounts.className = 'account__info'
+                                const userId = el._id
                                 const removeButton =
                                     document.createElement('button')
                                 removeButton.innerText = 'Remove'
@@ -70,7 +67,19 @@ loginFormSubmit.addEventListener('click', (event) => {
                                 removeButton.addEventListener(
                                     'click',
                                     (event) => {
-                                        // Remove button event
+                                        const deleteUser = async () => {
+                                            const deleteUserById = await fetch(
+                                                `http://localhost:3000/api/users/${userId}`,
+                                                {
+                                                    method: 'DELETE',
+                                                    headers: {
+                                                        Authorization: `Bearer ${data.token}`,
+                                                    },
+                                                }
+                                            )
+                                        }
+                                        deleteUser()
+                                        userCard.remove()
                                     }
                                 )
                                 userCard.append(
@@ -86,7 +95,6 @@ loginFormSubmit.addEventListener('click', (event) => {
                     }
                     getAllUsers()
                 })
-                console.log('Admin')
             }
         }
     }
