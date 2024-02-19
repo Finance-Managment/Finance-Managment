@@ -365,26 +365,77 @@ body.dark-theme {
 }
 /*=============== DASHBOARD ===============*/
 .user__card {
-  padding: 5px;
-  margin: 5px;
-  border: 3px solid var(--first-color);
-  border-radius: 5px;
-  background-color: var(--container-color);
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid var(--first-color);
+    border-radius: 5px;
+    background-color: var(--container-color);
 }
 .account__info {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 .remove__button {
-  cursor: pointer;
-  margin-top: 5px;
-  padding: 2px 5px;
-  background-color: crimson;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 2px 5px;
+    background-color: crimson;
 }
 .remove__button:hover {
-  scale: 1.05;
+    scale: 1.05;
 }
 .remove__button:active {
-  scale: 0.95;
+    scale: 0.95;
+}
+.income__info > div {
+    display: flex;
+}
+.outcome__info > div {
+    display: flex;
+}
+.amount__info {
+    margin-left: 10px;
+}
+.income {
+    color: green;
+}
+.outcome {
+    color: red;
+}
+.card {
+    margin-top: 10px;
+}
+.card > select {
+    padding-top: 3px;
+    color: var(--white-color);
+    border: 0;
+    height: 25px;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid black;
+    background-color: var(--first-color);
+}
+.card > input {
+    height: 25px;
+    border: 1px solid black;
+    background-color: var(--first-color);
+    color: var(--white-color);
+}
+.card > button {
+    height: 25px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid black;
+    background-image: linear-gradient(
+        to right,
+        var(--first-color) 5px,
+        var(--first-color-alt)
+    );
+    width: 75px;
+    color: var(--white-color);
+}
+.outcome__info {
+    margin-top: 5px;
+}
+.income__info {
+    margin-top: 5px;
 }
 /*=============== FOOTER ===============*/
 .footer {
