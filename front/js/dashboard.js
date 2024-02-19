@@ -1,7 +1,6 @@
-const userRole = 'simple' // temp, Role gaunama is index
-const userToken =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Y2M3Zjg1YWJkYzZhM2RjYzg2NjZhYSIsImlhdCI6MTcwODMzMzYzOSwiZXhwIjoxNzEwOTI1NjM5fQ.y_XSjIJvvIryDpraAATSliybtZi_XeGZamR2JoHCH4o' // Token gaunamas is index
-const userID = '65cc7f85abdc6a3dcc8666aa' // temp, ID gaunama is index
+const userRole = localStorage.getItem('userRole');
+const userToken = localStorage.getItem('userToken');
+const userID = localStorage.getItem('userID');
 if (userRole == 'admin') {
     const section = document.querySelector('.section')
     const getUsersButton = document.createElement('button')
@@ -261,3 +260,4 @@ if (userRole == 'admin') {
         cardHolder.append(outcomeCard)
     })
 }
+
