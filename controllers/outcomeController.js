@@ -69,9 +69,52 @@ const getAllOutcomes = asyncHandler(async (req, res) => {
     }
 })
 
+//////////////////////////
+// @desc: update one of the outcome field
+// @PUT method
+// @route: http://localhost:3000/api/outcomes/:id
+
+const updateOutcome = async function (req, res) {
+    const customOutcome = await Outcome.findById(req.params.id)
+    if (!customOutcome) {
+        res.status(404).send("Outcome ID wasn't found")
+        return
+    }
+
+    if (req.body.title) {
+        customOutcome.title = req.body.title
+    }
+    if (req.body.amount) {
+        customOutcome.amount = req.body.amount
+    }
+    if (req.body.description) {
+        customOutcome.description = req.body.description
+    }
+
+    const result = await customOutcome.save()
+    res.status(200).json(result)
+}
+
+////////////////////
+// @desc: Delete any outcome by outcome ID
+// @DELETE method
+// @route: http://localhost:3000/api/outcomes/:id
+
+const deleteOutcome = async function (req, res) {
+    const customOutcome = await Outcome.findById(req.params.id)
+    if (!customOutcome) {
+        res.status(404).send("Outcome with this ID wasn't found")
+        return
+    }
+    const result = await Outcome.deleteOne({ _id: req.params.id })
+    res.status(200).send(result)
+}
+
 module.exports = {
     createOutcome,
     getOutcome,
     getOutcomes,
     getAllOutcomes,
+    updateOutcome,
+    deleteOutcome,
 }

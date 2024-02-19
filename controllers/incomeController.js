@@ -69,9 +69,52 @@ const getAllIncomes = asyncHandler(async (req, res) => {
     }
 })
 
+//////////////////////////////////
+// @desc: update one of the outcome field
+// @PUT method
+// @route: http://localhost:3000/api/incomes/:id
+
+const updateIncome = async function (req, res) {
+    const customIncome = await Income.findById(req.params.id)
+    if (!customIncome) {
+        res.status(404).send("Income ID wasn't found")
+        return
+    }
+
+    if (req.body.title) {
+        customIncome.title = req.body.title
+    }
+    if (req.body.amount) {
+        customIncome.amount = req.body.amount
+    }
+    if (req.body.description) {
+        customIncome.description = req.body.description
+    }
+
+    const result = await customIncome.save()
+    res.status(200).json(result)
+}
+
+////////////////////
+// @desc: Delete any outcome by income ID
+// @DELETE method
+// @route: http://localhost:3000/api/incomes/:id
+
+const deleteIncome = async function (req, res) {
+    const customIncome = await Income.findById(req.params.id)
+    if (!customIncome) {
+        res.status(404).send("Income with this ID wasn't found")
+        return
+    }
+    const result = await Income.deleteOne({ _id: req.params.id })
+    res.status(200).send(result)
+}
+
 module.exports = {
     createIncome,
     getIncome,
     getIncomes,
     getAllIncomes,
+    updateIncome,
+    deleteIncome,
 }

@@ -107,6 +107,29 @@ Prieš naudojant, užtikrinkite, kad būtų paleistas serveris: `npm run start`
     -   Value: Bearer + jwtToken (gaunamas prisijungiant)
 -   Kam leidžiama ši operacija: visiems
 
+#### Pakeisti vartotojo įmokas/išmokas:
+
+-   Metodas: PUT
+-   Adresas: http://localhost:3000/api/outcomes/:id
+-   Headers:
+    -   Key: authorization
+    -   Value: Bearer + jwtToken (gaunamas prisijungiant)
+        Body: raw, JSON
+        {
+        "title": "...", (not mendatory)
+        "amount": "..." (type: Number)
+        "description": "..." (not mendatory)
+        }
+-   (Galima pasirinkti ir tik vieną pakeisti)
+-   Kam leidžiama ši operacija: visiems
+
+#### Ištrinti vartotojo įmokas/išmokas:
+
+-   Metodas: DELETE
+-   Adresas: http://localhost:3000/api/outcomes/:id
+-   Headers:
+-   Kam leidžiama ši operacija: visiems
+
 ## TO BE CONTINUED... (update/delete)
 
 ## [>> Screenshotai su testavimu <<](https://docs.google.com/presentation/d/1QaUpaLDVA9Na-2hCP99Sl070LJfxaonmJ60svLGtbis/edit#slide=id.g2aafeda88d4_0_0)
