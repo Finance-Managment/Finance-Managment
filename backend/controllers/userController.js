@@ -1,6 +1,6 @@
 // Imports
 
-const User = require('../models/User')
+const User = require('../models/User.js')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const asyncHandler = require('express-async-handler')
@@ -9,7 +9,7 @@ const asyncHandler = require('express-async-handler')
 
 // @method POST
 // @route http://localhost:3000/api/users
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const registerUser = asyncHandler(async (req, res) => {
     const { firstname, email, password } = req.body
@@ -55,7 +55,7 @@ const generateToken = (id) => {
 
 // @method POST
 // @route http://localhost:3000/api/users/login
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body
@@ -79,7 +79,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 // @method GET
 // @route http://localhost:3000/api/users/user
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const getUser = asyncHandler(async (req, res) => {
     res.status(200).json(req.user)
@@ -87,7 +87,7 @@ const getUser = asyncHandler(async (req, res) => {
 
 //@method PUT
 //@route http://localhost:3000/api/users/:id
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const updateUser = asyncHandler(async (req, res) => {
     const userId = req.params.id
@@ -120,7 +120,7 @@ const updateUser = asyncHandler(async (req, res) => {
 
 //@method DELETE
 //@route http://localhost:3000/api/users/:id
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const deleteUser = asyncHandler(async (req, res) => {
     const userId = req.params.id

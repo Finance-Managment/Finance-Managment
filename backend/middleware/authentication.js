@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler')
-const { getUser } = require('./helpers/user')
+const { getUser } = require('./helpers/user.js')
 
 const protect = asyncHandler(async (req, res, next) => {
     const { status, response } = await getUser(req)

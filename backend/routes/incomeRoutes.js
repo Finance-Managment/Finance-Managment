@@ -8,9 +8,9 @@ const {
     getAllIncomes,
     updateIncome,
     deleteIncome,
-} = require('../controllers/incomeController')
-const protect = require('../middleware/authentication')
-const protectAdmin = require('../middleware/adminAuthentication')
+} = require('../controllers/incomeController.js')
+const protect = require('../middleware/authentication.js')
+const protectAdmin = require('../middleware/adminAuthentication.js')
 
 router.post('/', createIncome)
 

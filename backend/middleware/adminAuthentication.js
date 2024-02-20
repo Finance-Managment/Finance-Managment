@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler')
-const { getUser, notAuthorizedMessage } = require('./helpers/user')
+const { getUser, notAuthorizedMessage } = require('./helpers/user.js')
 
 const protectAdmin = asyncHandler(async (req, res, next) => {
     const { status, response } = await getUser(req)

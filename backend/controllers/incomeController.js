@@ -1,10 +1,10 @@
-const Income = require('../models/Income')
+const Income = require('../models/Income.js')
 const asyncHandler = require('express-async-handler')
 
 //@desc: create income
 //@method: POST
 //@route: http://localhost:3000/api/incomes
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const createIncome = asyncHandler(async (req, res) => {
     if (!req.body.category || !req.body.amount) {
@@ -30,7 +30,7 @@ const createIncome = asyncHandler(async (req, res) => {
 //@desc: get user income by income id
 //@method: GET
 //@route: http://localhost:3000/api/incomes/:id
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const getIncome = asyncHandler(async (req, res) => {
     const income = await Income.findById(req.params.id)
@@ -44,7 +44,7 @@ const getIncome = asyncHandler(async (req, res) => {
 //@desc: get all user incomes by user id
 //@method: GET
 //@route: http://localhost:3000/api/incomes/:id/all
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const getIncomes = asyncHandler(async (req, res) => {
     try {
@@ -58,7 +58,7 @@ const getIncomes = asyncHandler(async (req, res) => {
 //@desc: get all incomes in general
 //@method: GET
 //@route: http://localhost:3000/api/incomes/all
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const getAllIncomes = asyncHandler(async (req, res) => {
     try {
@@ -73,6 +73,7 @@ const getAllIncomes = asyncHandler(async (req, res) => {
 // @desc: update one of the outcome field
 // @PUT method
 // @route: http://localhost:3000/api/incomes/:id
+// more details -> info/CRUDguide.md
 
 const updateIncome = async function (req, res) {
     const customIncome = await Income.findById(req.params.id)
@@ -99,6 +100,7 @@ const updateIncome = async function (req, res) {
 // @desc: Delete any outcome by income ID
 // @DELETE method
 // @route: http://localhost:3000/api/incomes/:id
+// more details -> info/CRUDguide.md
 
 const deleteIncome = async function (req, res) {
     const customIncome = await Income.findById(req.params.id)

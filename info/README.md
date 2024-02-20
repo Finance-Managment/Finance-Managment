@@ -55,7 +55,7 @@ This is a comprehensive full-stack finance management web app designed to empowe
 - LAURYNAS SAPNAGIS
 - MATAS NACEVICIUS
 - MANTAS SAPARAVICIUS
-- MONIKA
+- MONIKA PASTELĖ
 - JUSTINAS ASTASOVAS
 - GRANTAS ADOMAITIS
 
@@ -69,7 +69,7 @@ Report any issues or bugs in the [Issues section].
 
 ---
 
-### Author
+### Author/Team Leader
 
 TAUTVYDAS KREIVYS
 tautvydas.kreivys@gmail.com
