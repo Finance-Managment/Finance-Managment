@@ -301,8 +301,8 @@ body.dark-theme {
     justify-self: center;
 }
 .contact__page {
-    padding-block: 1rem;
-    padding-inline: 4rem;
+    padding-block: 2rem;
+    padding-inline: 6rem;
 }
 .contact__form {
     position: relative;
@@ -643,7 +643,7 @@ body.dark-theme {
     }
 }
 /* sign in/sign up: form */
-.contact__page {
+.logReg__page {
     width: 250px;
     height: 500px;
     display: flex;
@@ -688,7 +688,6 @@ body.dark-theme {
 #signupFormSubmit {
     min-width: 100%;
     transform: none;
-    margin-bottom: 6px;
     border-radius: 0 0 0 0;
     border-radius: 5px 5px 0 0;
 }
@@ -697,17 +696,11 @@ body.dark-theme {
 }
 
 .header__button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
+    background: linear-gradient(
+        to right,
+        var(--first-color-alt),
+        var(--first-color-light)
+    );
 }
 
 /* sign up form end */
