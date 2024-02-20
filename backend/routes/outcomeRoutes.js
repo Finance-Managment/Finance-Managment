@@ -8,9 +8,9 @@ const {
     getAllOutcomes,
     updateOutcome,
     deleteOutcome,
-} = require('../controllers/outcomeController')
-const protect = require('../middleware/authentication')
-const protectAdmin = require('../middleware/adminAuthentication')
+} = require('../controllers/outcomeController.js')
+const protect = require('../middleware/authentication.js')
+const protectAdmin = require('../middleware/adminAuthentication.js')
 
 router.post('/', protect, createOutcome)
 

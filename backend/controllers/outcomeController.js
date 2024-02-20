@@ -1,10 +1,10 @@
-const Outcome = require('../models/Outcome')
+const Outcome = require('../models/Outcome.js')
 const asyncHandler = require('express-async-handler')
 
 //@desc: create outcome
 //@method: POST
 //@route: http://localhost:3000/api/outcomes
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const createOutcome = asyncHandler(async (req, res) => {
     if (!req.body.category || !req.body.amount) {
@@ -30,7 +30,7 @@ const createOutcome = asyncHandler(async (req, res) => {
 //@desc: get user outcome by outcome id
 //@method: GET
 //@route: http://localhost:3000/api/outcomes/:id
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const getOutcome = asyncHandler(async (req, res) => {
     const outcome = await Outcome.findById(req.params.id)
@@ -44,7 +44,7 @@ const getOutcome = asyncHandler(async (req, res) => {
 //@desc: get all user outcomes by user id
 //@method: GET
 //@route: http://localhost:3000/api/outcomes/:id/all
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const getOutcomes = asyncHandler(async (req, res) => {
     try {
@@ -58,7 +58,7 @@ const getOutcomes = asyncHandler(async (req, res) => {
 //@desc: get all outcomes in general
 //@method: GET
 //@route: http://localhost:3000/api/outcomes/all
-// more details -> CRUDguide.md
+// more details -> info/CRUDguide.md
 
 const getAllOutcomes = asyncHandler(async (req, res) => {
     try {
@@ -73,6 +73,7 @@ const getAllOutcomes = asyncHandler(async (req, res) => {
 // @desc: update one of the outcome field
 // @PUT method
 // @route: http://localhost:3000/api/outcomes/:id
+// more details -> info/CRUDguide.md
 
 const updateOutcome = async function (req, res) {
     const customOutcome = await Outcome.findById(req.params.id)
@@ -99,6 +100,7 @@ const updateOutcome = async function (req, res) {
 // @desc: Delete any outcome by outcome ID
 // @DELETE method
 // @route: http://localhost:3000/api/outcomes/:id
+// more details -> info/CRUDguide.md
 
 const deleteOutcome = async function (req, res) {
     const customOutcome = await Outcome.findById(req.params.id)

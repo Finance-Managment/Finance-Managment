@@ -6,10 +6,10 @@ const {
     getUser,
     getAllUsers,
     deleteUser,
-} = require('../controllers/userController')
+} = require('../controllers/userController.js')
 
-const protect = require('../middleware/authentication')
-const protectAdmin = require('../middleware/adminAuthentication')
+const protect = require('../middleware/authentication.js')
+const protectAdmin = require('../middleware/adminAuthentication.js')
 
 router.post('/', registerUser)
 router.post('/login', loginUser)

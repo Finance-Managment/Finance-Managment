@@ -20,7 +20,7 @@
         />
 
         <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="./front/css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
 
         <title>Financer</title>
     </head>
@@ -29,15 +29,19 @@
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="index.html" class="nav__logo">Financer</a>
+                <a href="../html/index.html" class="nav__logo">Financer</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="about.html" class="nav__link">About Us</a>
+                            <a href="../html/about.html" class="nav__link"
+                                >About Us</a
+                            >
                         </li>
                         <li class="nav__item">
-                            <a href="contact.html" class="button">Contact Us</a>
+                            <a href="../html/contact.html" class="button"
+                                >Contact Us</a
+                            >
                         </li>
                     </ul>
                     <!-- Close button -->
@@ -64,7 +68,7 @@
                 <div class="home__container container grid">
                     <div class="home__content grid">
                         <div class="home__data">
-                            <div class="logReg__page container grid">
+                            <div class="contact__page container grid">
                                 <!-- =========== LOGIN FORM========== -->
                                 <form
                                     action=""
@@ -78,7 +82,7 @@
                                             name="email"
                                             id="loginFormEmailInput"
                                             required
-                                            placeholder="Write your email"
+                                            placeholder="Enter your email"
                                             class="contact__input"
                                         />
                                         <label
@@ -93,7 +97,7 @@
                                             name="password"
                                             id="loginFormPasswordInput"
                                             required
-                                            placeholder="Write your password"
+                                            placeholder="Enter your password"
                                             class="contact__input"
                                         />
                                         <label
@@ -123,7 +127,7 @@
                                             name="name"
                                             id="signupFormNameInput"
                                             required
-                                            placeholder="Write your name"
+                                            placeholder="Enter your name"
                                             class="contact__input"
                                         />
                                         <label for="name" class="contact__label"
@@ -136,7 +140,7 @@
                                             name="email"
                                             id="signupFormEmailInput"
                                             required
-                                            placeholder="Write your email"
+                                            placeholder="Enter your email"
                                             class="contact__input"
                                         />
                                         <label
@@ -151,7 +155,7 @@
                                             name="password"
                                             id="signupFormPasswordInput"
                                             required
-                                            placeholder="Write your password"
+                                            placeholder="Enter your password"
                                             class="contact__input"
                                         />
                                         <label
@@ -183,7 +187,9 @@
                         About Your Problems
                     </h2>
 
-                    <a href="./contact.html" class="contact__button button"
+                    <a
+                        href="../html/contact.html"
+                        class="contact__button button"
                         >Contact Me</a
                     >
                 </div>
@@ -233,12 +239,8 @@
             <i class="ri-arrow-up-line"></i>
         </a>
         <!--=============== MAIN JS ===============-->
-        <script src="front/js/main.js"></script>
+        <script src="../js/main.js"></script>
         <!--=============== INDEX JS ===============-->
-        <script src="front/js/index.js"></script>
-        <!--=============== LOGIN JS ===============-->
-        <script src="front/js/login.js"></script>
-        <!--=============== SIGNUP JS ===============-->
-        <script src="front/js/signup.js"></script>
+        <script src="../js/index.js"></script>
     </body>
 </html>

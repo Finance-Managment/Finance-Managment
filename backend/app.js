@@ -3,8 +3,8 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
-const errorHandler = require('./middleware/errorHandler')
-const connectToDB = require('./config/db')
+const errorHandler = require('./middleware/errorHandler.js')
+const connectToDB = require('./config/db.js')
 
 connectToDB()
 
@@ -17,15 +17,15 @@ app.use(express.urlencoded({ extended: false }))
 // routes
 
 // users
-app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/users', require('./routes/userRoutes.js'))
 
 // incomes
 
-app.use('/api/incomes', require('./routes/incomeRoutes'))
+app.use('/api/incomes', require('./routes/incomeRoutes.js'))
 
 // outcomes
 
-app.use('/api/outcomes', require('./routes/outcomeRoutes'))
+app.use('/api/outcomes', require('./routes/outcomeRoutes.js'))
 
 app.use(errorHandler)
 
