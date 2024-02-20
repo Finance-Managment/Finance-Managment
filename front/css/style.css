@@ -696,4 +696,18 @@ body.dark-theme {
     box-shadow: 0 0px 20px rgba(221, 63, 63, 0.5); /* Adjust the shadow properties as needed */
 }
 
+.header__button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
 /* sign up form end */
