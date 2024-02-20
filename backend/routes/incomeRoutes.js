@@ -12,7 +12,7 @@ const {
 const protect = require('../middleware/authentication.js')
 const protectAdmin = require('../middleware/adminAuthentication.js')
 
-router.post('/', createIncome)
+router.post('/', protect, createIncome)
 
 router.get('/all', protectAdmin, getAllIncomes) // ! svarbu buti pirmam
 router.get('/:id', protect, getIncome)
