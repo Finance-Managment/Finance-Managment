@@ -1,9 +1,9 @@
-const refreshMessage = 5000
+
 // function updateMessage() {
 //     checkIncomeOutcome()
 // }
 // setInterval(updateMessage, refreshMessage)
-
+const refreshMessage = 5000
 const checkIncomeOutcome = async () => {
     try {
         const incomeData = await getIncomes()

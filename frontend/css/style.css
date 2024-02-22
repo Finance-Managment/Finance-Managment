@@ -708,9 +708,14 @@ body.dark-theme {
 /*messages for user*/
 
 #message {
-    border: 1px solid black;
-    height: 200px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    text-align: center;
 }
+
 .warning {
     color: red;
 }
