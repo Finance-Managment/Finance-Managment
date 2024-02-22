@@ -704,3 +704,19 @@ body.dark-theme {
 }
 
 /* sign up form end */
+
+/*messages for user*/
+
+#message {
+    border: 1px solid black;
+    height: 200px;
+}
+.warning {
+    color: red;
+}
+.caution {
+    color: yellow;
+}
+.success {
+    color: green;
+}
