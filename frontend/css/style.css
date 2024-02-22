@@ -702,5 +702,13 @@ body.dark-theme {
         var(--first-color-light)
     );
 }
+.login__form .section__title{
+    position: absolute;
+    width: 100%;
+    height: 51px;
+}
+#loginContact__box1{
+    margin-top: 100px;
+}
 
 /* sign up form end */
