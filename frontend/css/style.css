@@ -656,6 +656,7 @@ body.dark-theme {
 
 #loginForm {
     position: absolute;
+    width: 250px;
     bottom: 0px;
     background-color: var(--first-color);
     overflow: hidden;
@@ -680,6 +681,7 @@ body.dark-theme {
     height: 90%;
     gap: 20px;
     margin-bottom: 49px;
+    width: 250px;
 }
 .home__data {
     display: flex;
@@ -706,6 +708,7 @@ body.dark-theme {
     position: absolute;
     width: 100%;
     height: 51px;
+    z-index: 1;
 }
 #loginContact__box1{
     margin-top: 100px;
