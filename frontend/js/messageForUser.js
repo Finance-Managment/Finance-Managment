@@ -1,4 +1,8 @@
-console.log('hi')
+const refreshMessage = 5000
+function updateMessage() {
+    checkIncomeOutcome()
+}
+setInterval(updateMessage, refreshMessage)
 
 const checkIncomeOutcome = async () => {
     try {
@@ -15,11 +19,20 @@ const checkIncomeOutcome = async () => {
             console.log(message)
         } else {
             const balance = outcomeData.totalAmount - incomeData.totalAmount
-            console.log(`Your balance is ${balance}€`)
+            console.log(`Warning!:Your balance is ${balance}€`)
         }
     } catch (err) {
         console.log(`error, ${err}`)
     }
 }
+///
+const messageContainer = document.createElement("div")
+function displayMessage(message) {
+    document.getElementById('messageContainer').innerText = message;
+}
+
+
+
+
 
 checkIncomeOutcome()
