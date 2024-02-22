@@ -10,7 +10,6 @@ const getIncomes = async () => {
     );
     
     const responseData = await allIncomes.json();
-    // console.log("Response data:", responseData);
     
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' });
     
@@ -52,7 +51,6 @@ const getOutcomes = async () => {
     );
     
     const responseData = await allOutcomes.json();
-    // console.log("Response data:", responseData);
     
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' });
     
@@ -90,23 +88,26 @@ const fetchDataAndUpdateChart = async () => {
 
         const incomeAmounts = [];
         const outcomeAmounts = [];
+        const leftBudgetAmounts = [];
+
         months.forEach(month => {
             incomeAmounts.push(incomeData.monthsData[month] || 0);
             outcomeAmounts.push(outcomeData.monthsData[month] || 0);
+
+            const leftBudget = (incomeData.monthsData[month] || 0) - (outcomeData.monthsData[month] || 0);
+            leftBudgetAmounts.push(leftBudget);
         });
 
         myChart.data.labels = months;
-        myChart.data.datasets[0].data = incomeAmounts;
-        myChart.data.datasets[1].data = outcomeAmounts;
-        myChart.data.timestamp = incomeData.timestamp;
+        myChart.data.datasets[0].data = leftBudgetAmounts;
+        myChart.data.datasets[1].data = incomeAmounts;
+        myChart.data.datasets[2].data = outcomeAmounts;
 
         myChart.update();
     } catch (error) {
         console.error("Error fetching or updating data:", error);
     }
 };
-
-fetchDataAndUpdateChart();
 
 const updateInterval = setInterval(fetchDataAndUpdateChart, 5000);
 
@@ -116,6 +117,13 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [],
         datasets: [{
+                label: 'Left Budget',
+                data: [],
+                backgroundColor: 'rgba(255, 255, 0, 0.2)',
+                borderColor: 'rgba(255, 255, 0, 1)',
+                borderWidth: 1
+            },
+            {
                 label: 'Income',
                 data: [],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -140,4 +148,4 @@ const myChart = new Chart(ctx, {
     }
 });
 
-
+fetchDataAndUpdateChart();
