@@ -295,22 +295,11 @@ body.dark-theme {
     transition: background-color 0.4s, box-shadow 0.4s;
 }
 
-.button_outcome {
-    display: inline-block;
-    background: linear-gradient(
-        to right,
-        var(--first-color),
-        var(--first-color-alt)
-    );
-    background-color: var(--first-color);
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-    padding: 1rem;
-    width: 15rem;
-    justify-content: center;
-    transition: background-color 0.4s, box-shadow 0.4s;
+.section {
+    text-align: center;
 }
 
+.button_outcome,
 .button_income {
     display: inline-block;
     background: linear-gradient(
@@ -323,8 +312,15 @@ body.dark-theme {
     font-weight: var(--font-semi-bold);
     padding: 1rem;
     width: 15rem;
-    justify-content: center;
+    justify-content: space-between;
     transition: background-color 0.4s, box-shadow 0.4s;
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+
+/* Remove margin from the last button */
+.button_income:last-child {
+    margin-right: 0;
 }
 
 .button:hover,
@@ -466,7 +462,7 @@ body.dark-theme {
 }
 
 .card {
-    margin-top: 10px;
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -659,6 +655,24 @@ body.dark-theme {
     .contact__send {
         justify-self: center;
         margin-top: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column; 
+    }
+    
+    .card > select,
+    .card > input,
+    .card > button {
+        width: 100%; 
+    }
+    
+    .button_outcome,
+    .button_income {
+        margin: 0; 
+        margin-bottom: 10px; 
     }
 }
 
