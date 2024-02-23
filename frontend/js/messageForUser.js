@@ -21,7 +21,7 @@ const checkIncomeOutcome = async () => {
             message = `Warning! Your balance is ${balance}€`
             messageClass = 'caution'
         }
-        console.log(message)
+        // console.log(message)
 
         const messageParagraph = document.getElementById('messageForUser')
 
