@@ -24,5 +24,4 @@ const savingSchema = new mongoose.Schema(
         timestamps: true,
     }
 )
-
 module.exports = mongoose.model('Saving', savingSchema)
