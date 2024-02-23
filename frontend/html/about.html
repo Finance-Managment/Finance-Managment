@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,17 +19,8 @@
 
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="../css/style.css" />
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-        <script
-            type="text/javascript"
-            src="https://www.gstatic.com/charts/loader.js"
-        ></script>
-
-        <title>Financer</title>
+        <title>About us</title>
     </head>
-
     <body>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
@@ -41,9 +30,12 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="../html/about.html" class="nav__link"
-                                >About Us</a
+                            <a href="../html/index.html" class="nav__link"
+                                >Home</a
                             >
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" id="dashboard">Dashboard</a>
                         </li>
                         <li class="nav__item">
                             <a href="../html/contact.html" class="button"
@@ -63,40 +55,88 @@
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="ri-apps-2-line"></i>
                 </div>
-                <div class="nav__actions">
-                    <!-- Button in the header's right corner -->
-                    <button class="header__button button" id="logoutButton">
-                        Sign out
-                    </button>
-                </div>
             </nav>
         </header>
-
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <section class="section admin__section"></section>
-            <canvas id="myChart" style="width: 100%"></canvas>
+        <section>
+            <p style="margin-top: 56px; text-align: center; font-size: 32px">
+                About Us
+            </p>
             <div
-                id="pieChart"
-                style="width: 100%; max-width: 600px; height: 500px"
-            ></div>
-            <div id="message"></div>
-
-        </main>
-
+                style="
+                    margin-top: 25px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                "
+            >
+                <img src="../img/finance-img.avif" alt="Finance-img" />
+            </div>
+            <p
+                style="
+                    margin-top: 20px;
+                    text-align: center;
+                    word-break: inherit;
+                "
+            >
+                Finance is the study of money and how it is used. Specifically,
+                it deals with the questions of how an individual, company or
+                government acquires the money needed and how they then spend or
+                invest that money. Core financial theories can largely be
+                divided into the following categories: financial economics,
+                mathematical finance and valuation. In the context of
+                institutions, finance is often split into the following major
+                categories: investment management, corporate finance, personal
+                finance and public finance.
+            </p>
+            <div
+                style="
+                    margin-top: 25px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                "
+            >
+                <img
+                    src="../img/illustration-data.avif"
+                    alt="illustration-data-chart"
+                />
+            </div>
+            <p
+                style="
+                    margin-top: 20px;
+                    text-align: center;
+                    word-break: inherit;
+                    margin-bottom: 20px;
+                "
+            >
+                Financial graphs and charts are visual tools that allow
+                companies to monitor various performance metrics in areas such
+                as liquidity, budgets, expenses, cash flow, and others. By doing
+                so, they can successfully manage risks to ensure healthy
+                finances and steady growth. To ensure the best possible
+                performance for a company, conducting regular financial
+                analytics and ensuring the highest quality of data management
+                must be the top priorities of companies, no matter the size. If
+                the finance department raises an alarm, everyone must carefully
+                listen because it concerns the most crucial information and can
+                lead to serious damages if ignored. That's why financial charts
+                must be created with the utmost care and attention. Let's see
+                this in more detail.
+            </p>
+        </section>
         <!--==================== FOOTER ====================-->
-        <footer class="footer" id="footer">
+        <footer class="footer">
             <div class="footer__container container grid">
                 <div class="footer__content grid">
                     <a href="index.html" class="footer__logo">Financer</a>
                     <ul class="footer__links">
                         <li>
-                            <a href="../html/about.html" class="footer__link"
+                            <a href="about.html" class="footer__link"
                                 >About Us</a
                             >
                         </li>
                         <li>
-                            <a href="../html/contact.html" class="footer__link"
+                            <a href="contact.html" class="footer__link"
                                 >Contact Us</a
                             >
                         </li>
@@ -130,18 +170,11 @@
         <script src="../js/main.js"></script>
         <!--=============== INDEX JS ===============-->
         <script src="../js/index.js"></script>
-        <!--=============== DASHBOARD JS ===============-->
-        <script src="../js/dashboard.js"></script>
-        <!--=============== LOGOUT JS ===============-->
-        <script src="../js/logoutBtn.js"></script>
-        <!--=============== BARCHART JS ===============-->
-        <script src="../js/barChart.js"></script>
-        <!--=============== PIECHART JS ===============-->
-        <script src="../js/pieChart.js"></script>
+        <!--=============== LOGIN JS ===============-->
+        <script src="../js/login.js"></script>
+        <!--=============== SIGNUP JS ===============-->
+        <script src="../js/signup.js"></script>
         <!--=============== ABOUT.JS===================-->
         <script src="../js/about.js"></script>
-        <!--=============== messageForUser JS ===============-->
-        <script src="../js/messageForUser.js"></script>
-
     </body>
 </html>
