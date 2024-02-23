@@ -1,6 +1,6 @@
-const userRole = localStorage.getItem('userRole');
-const userToken = localStorage.getItem('userToken');
-const userID = localStorage.getItem('userID');
+const userRole = localStorage.getItem('userRole')
+const userToken = localStorage.getItem('userToken')
+const userID = localStorage.getItem('userID')
 if (userRole == 'admin') {
     const section = document.querySelector('.section')
     const getUsersButton = document.createElement('button')
@@ -150,19 +150,27 @@ if (userRole == 'admin') {
             const incomeInfo = document.createElement('div')
             incomeInfo.className = 'income__info'
             const incomeData = await allIncomes.json()
+            incomeObject = {}
             incomeData.data.forEach((el) => {
+                if (incomeObject[el.category] == null) {
+                    incomeObject[el.category] = el.amount
+                } else {
+                    incomeObject[el.category] += el.amount
+                }
+            })
+            for (el in incomeObject) {
                 const infoLine = document.createElement('div')
                 const category = document.createElement('div')
-                category.innerText = `${el.category}:`
+                category.innerText = `${el}:`
                 category.className = 'category__info'
                 const amount = document.createElement('div')
-                total += Math.abs(el.amount)
-                amount.innerText = `+${Math.abs(el.amount)}€`
+                total += Math.abs(incomeObject[el])
+                amount.innerText = `+${incomeObject[el]}€`
                 amount.className = 'amount__info'
                 amount.className += ' income'
                 infoLine.append(category, amount)
                 incomeInfo.append(infoLine)
-            })
+            }
             const totalIncome = document.createElement('div')
             const totalCategory = document.createElement('div')
             totalCategory.innerText = 'Total:'
@@ -233,19 +241,27 @@ if (userRole == 'admin') {
             const outcomeInfo = document.createElement('div')
             outcomeInfo.className = 'outcome__info'
             const outcomeData = await allOutcomes.json()
+            outcomeObject = {}
             outcomeData.data.forEach((el) => {
+                if (outcomeObject[el.category] == null) {
+                    outcomeObject[el.category] = el.amount
+                } else {
+                    outcomeObject[el.category] += el.amount
+                }
+            })
+            for (el in outcomeObject) {
                 const infoLine = document.createElement('div')
                 const category = document.createElement('div')
-                category.innerText = `${el.category}:`
+                category.innerText = `${el}:`
                 category.className = 'category__info'
                 const amount = document.createElement('div')
-                total += Math.abs(el.amount)
-                amount.innerText = `-${Math.abs(el.amount)}€`
+                total += Math.abs(outcomeObject[el])
+                amount.innerText = `-${outcomeObject[el]}€`
                 amount.className = 'amount__info'
                 amount.className += ' outcome'
                 infoLine.append(category, amount)
                 outcomeInfo.append(infoLine)
-            })
+            }
             const totalOutcome = document.createElement('div')
             const totalCategory = document.createElement('div')
             totalCategory.innerText = 'Total:'
@@ -260,4 +276,3 @@ if (userRole == 'admin') {
         cardHolder.append(outcomeCard)
     })
 }
-
