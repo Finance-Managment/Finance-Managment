@@ -70,10 +70,10 @@ if (userRole == 'admin') {
     const section = document.querySelector('.section')
     const showIncome = document.createElement('button')
     showIncome.innerText = 'Show Income'
-    showIncome.className = 'button'
+    showIncome.className = 'button_income'
     const showOutcome = document.createElement('button')
     showOutcome.innerText = 'Show Outcome'
-    showOutcome.className = 'button'
+    showOutcome.className = 'button_outcome'
     const cardHolder = document.createElement('div')
     section.append(showIncome, showOutcome, cardHolder)
     const incomeCatagories = [
@@ -188,7 +188,7 @@ if (userRole == 'admin') {
             dropdownSelect.append(dropdownOption)
         })
         const outcomeField = document.createElement('input')
-        outcomeField.placeholder = 'Enter Income'
+        outcomeField.placeholder = 'Enter Outcome'
         outcomeField.setAttribute('type', 'number')
         const submitButton = document.createElement('button')
         submitButton.innerText = 'Submit'
