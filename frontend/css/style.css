@@ -313,6 +313,7 @@ body.dark-theme {
     transition: background-color 0.4s, box-shadow 0.4s;
     margin-right: 5rem;
     margin-left: 5rem;
+    margin: 5rem 20px;
 }
 
 /* Remove margin from the last button */
