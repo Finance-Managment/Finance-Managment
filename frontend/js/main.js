@@ -67,11 +67,11 @@ const topLogin = document.querySelector('#loginForm>h2')
 const formLogin = document.querySelector('#loginForm')
 const inputEmailFromLogin = document.querySelector("#loginFormEmailInput")
 const inputPassFromLogin = document.querySelector("#loginFormPasswordInput")
-inputEmailFromLogin.style.display="none"
-inputPassFromLogin.style.display="none"
-topLogin.style.cursor = 'pointer'
-formLogin.style.height = '51px'
-topLogin.addEventListener('click', (ev) => {
+if(inputEmailFromLogin){inputEmailFromLogin.style.display="none"}
+if(inputPassFromLogin){inputPassFromLogin.style.display="none"}
+if(topLogin){topLogin.style.cursor = 'pointer'}
+if(formLogin){formLogin.style.height = '51px'}
+if(topLogin){topLogin.addEventListener('click', (ev) => {
     if (formLogin.style.height === '51px') {
         formLogin.style.height = '90%'
         formLogin.style.bottom = '10px'
@@ -96,4 +96,4 @@ topSignup.addEventListener('click', (ev) => {
         inputEmailFromLogin.style.display="none"
         inputPassFromLogin.style.display="none"
     }
-})
+})}
