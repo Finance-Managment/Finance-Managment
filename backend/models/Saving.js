@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const savingsSchema = new mongoose.Schema(
+const savingSchema = new mongoose.Schema(
     {
         description: {
             type: String,
@@ -25,4 +25,4 @@ const savingsSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Income', savingsSchema)
+module.exports = mongoose.model('Income', savingSchema)

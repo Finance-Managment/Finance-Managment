@@ -27,6 +27,10 @@ app.use('/api/incomes', require('./routes/incomeRoutes.js'))
 
 app.use('/api/outcomes', require('./routes/outcomeRoutes.js'))
 
+// savings
+
+app.use('/api/outcomes', require('./routes/savingRoutes.js'))
+
 app.use(errorHandler)
 
 app.listen(process.env.PORT, () =>
