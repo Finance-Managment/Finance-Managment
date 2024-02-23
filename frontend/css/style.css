@@ -715,3 +715,24 @@ body.dark-theme {
 }
 
 /* sign up form end */
+
+/*messages for user*/
+
+#message {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    text-align: center;
+}
+
+.warning {
+    color: red;
+}
+.caution {
+    color: yellow;
+}
+.success {
+    color: green;
+}
