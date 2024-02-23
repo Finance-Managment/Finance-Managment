@@ -1,9 +1,5 @@
-
-// function updateMessage() {
-//     checkIncomeOutcome()
-// }
-// setInterval(updateMessage, refreshMessage)
 const refreshMessage = 5000
+
 const checkIncomeOutcome = async () => {
     try {
         const incomeData = await getIncomes()
@@ -31,6 +27,7 @@ const checkIncomeOutcome = async () => {
 
         if (messageParagraph) {
             messageParagraph.textContent = message
+            messageParagraph.className = '' // Clear any existing classes
             messageParagraph.classList.add(messageClass)
         } else {
             const newMessageParagraph = document.createElement('p')
@@ -38,19 +35,20 @@ const checkIncomeOutcome = async () => {
             newMessageParagraph.textContent = message
             newMessageParagraph.classList.add(messageClass)
 
-            const messageContainer = document.getElementById('message')
+            const messageContainer = document.getElementById('messages')
             messageContainer.appendChild(newMessageParagraph)
         }
     } catch (err) {
         console.log(`error, ${err}`)
     }
 }
-///
-checkIncomeOutcome()
-//to observe the changes made for outcomes/incomes
-const observer = new MutationObserver(() => {
-    checkIncomeOutcome()
-})
 
+// Execute function initially
+checkIncomeOutcome()
+
+// Observe the changes made for outcomes/incomes
+const observer = new MutationObserver(checkIncomeOutcome)
 observer.observe(document.body, { childList: true, subtree: true })
+
+// Refresh message periodically
 setInterval(checkIncomeOutcome, refreshMessage)
