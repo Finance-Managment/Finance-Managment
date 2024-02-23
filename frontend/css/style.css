@@ -14,7 +14,7 @@
     /*Color mode HSL(hue, saturation, lightness)*/
     /* 
        Change favorite color
-       Default: hsl(0, 19%, 53%)
+       Default: hsl(198, 19%, 53%)
        Orange: hsl(14, 90%, 60%) - Blue: hsl(210, 90%, 50%)
        Pink: hsl(356, 100%, 65%) - Green: hsl(162, 90%, 40%)
  
@@ -23,9 +23,9 @@
        -> Click on tab (Color Conversion)
        -> Copy the color mode (HSL)
    */
-    --hue: 0;
+    --hue: 245;
     --first-color: hsl(var(--hue), 19%, 53%);
-    --first-color-alt: hsl(var(--hue), 82%, 56%);
+    --first-color-alt: hsl(var(--hue), 42%, 46%);
     --first-color-light: hsl(var(--hue), 40%, 80%);
     --title-color: hsl(var(--hue), 24%, 16%);
     --text-color: hsl(var(--hue), 8%, 45%);
@@ -820,8 +820,9 @@ body.dark-theme {
     background: linear-gradient(
         to right,
         var(--first-color-alt),
-        var(--first-color-light)
+        var(--first-color)
     );
+    cursor: pointer;
 }
 
 .login__form .section__title {
