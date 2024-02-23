@@ -14,7 +14,7 @@ const getIncomes = async () => {
 
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' })
 
-    const incomeData = responseData.data
+    const incomeData = responseData.data;
     if (!Array.isArray(incomeData)) {
         console.warn('Unexpected data format. Expected an array.')
         return { totalAmount: 0, timestamp }
@@ -56,7 +56,7 @@ const getOutcomes = async () => {
 
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' })
 
-    const outcomeData = responseData.data
+    const outcomeData = responseData.data;
 
     if (!Array.isArray(outcomeData)) {
         console.warn('Unexpected data format. Expected an array.')
@@ -85,6 +85,7 @@ const getOutcomes = async () => {
 
 const fetchDataAndUpdateChart = async () => {
     try {
+
         const [incomeData, outcomeData] = await Promise.all([
             getIncomes(),
             getOutcomes(),
@@ -104,22 +105,24 @@ const fetchDataAndUpdateChart = async () => {
         myChart.data.timestamp = incomeData.timestamp
 
         myChart.update()
+
     } catch (error) {
         console.error('Error fetching or updating data:', error)
     }
 }
 
+
 fetchDataAndUpdateChart()
 
 const updateInterval = setInterval(fetchDataAndUpdateChart, 5000)
+
 
 const ctx = document.getElementById('myChart').getContext('2d')
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: [],
-        datasets: [
-            {
+        datasets: [{
                 label: 'Income',
                 data: [],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -138,9 +141,10 @@ const myChart = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                beginAtZero: true,
-            },
-        },
-    },
-})
+                beginAtZero: true
+            }
+        }
+    }
+});
 
+fetchDataAndUpdateChart();
