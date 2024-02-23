@@ -25,4 +25,4 @@ const savingSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Income', savingSchema)
+module.exports = mongoose.model('Saving', savingSchema)
