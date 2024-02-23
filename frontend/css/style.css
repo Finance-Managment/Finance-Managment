@@ -189,6 +189,7 @@ body.dark-theme {
 .section {
     padding-block: 5rem;
     padding-inline: 1rem;
+    text-align: center;
 }
 
 .section__title {
@@ -293,10 +294,6 @@ body.dark-theme {
     font-weight: var(--font-semi-bold);
     padding: 1rem 2rem;
     transition: background-color 0.4s, box-shadow 0.4s;
-}
-
-.section {
-    text-align: center;
 }
 
 .button_outcome,
@@ -441,10 +438,7 @@ body.dark-theme {
     scale: 0.95;
 }
 
-.income__info > div {
-    display: flex;
-}
-
+.income__info > div,
 .outcome__info > div {
     display: flex;
 }
@@ -505,10 +499,7 @@ body.dark-theme {
     color: var(--white-color);
 }
 
-.outcome__info {
-    margin-top: 5px;
-}
-
+.outcome__info,
 .income__info {
     margin-top: 5px;
 }
@@ -660,19 +651,19 @@ body.dark-theme {
 
 @media screen and (max-width: 768px) {
     .card {
-        flex-direction: column; 
+        flex-direction: column;
     }
-    
+
     .card > select,
     .card > input,
     .card > button {
-        width: 100%; 
+        width: 100%;
     }
-    
+
     .button_outcome,
     .button_income {
-        margin: 0; 
-        margin-bottom: 10px; 
+        margin: 0;
+        margin-bottom: 10px;
     }
 }
 
