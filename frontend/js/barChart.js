@@ -10,11 +10,9 @@ const getIncomes = async () => {
     )
 
     const responseData = await allIncomes.json()
-    // console.log("Response data:", responseData);
-
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' })
+    const incomeData = responseData.data
 
-    const incomeData = responseData.data;
     if (!Array.isArray(incomeData)) {
         console.warn('Unexpected data format. Expected an array.')
         return { totalAmount: 0, timestamp }
@@ -52,11 +50,8 @@ const getOutcomes = async () => {
     )
 
     const responseData = await allOutcomes.json()
-    // console.log("Response data:", responseData);
-
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' })
-
-    const outcomeData = responseData.data;
+    const outcomeData = responseData.data
 
     if (!Array.isArray(outcomeData)) {
         console.warn('Unexpected data format. Expected an array.')
@@ -83,17 +78,37 @@ const getOutcomes = async () => {
     return { totalAmount, monthsData, timestamp }
 }
 
+const getNetSavings = async () => {
+    const [incomeData, outcomeData] = await Promise.all([
+        getIncomes(),
+        getOutcomes(),
+    ])
+
+    const months = Object.keys(incomeData.monthsData)
+    const netSavings = []
+
+    months.forEach((month) => {
+        const income = incomeData.monthsData[month] || 0
+        const outcome = outcomeData.monthsData[month] || 0
+        const savings = income - outcome
+        netSavings.push(savings)
+    })
+
+    return netSavings
+}
+
 const fetchDataAndUpdateChart = async () => {
     try {
-
-        const [incomeData, outcomeData] = await Promise.all([
+        const [incomeData, outcomeData, netSavings] = await Promise.all([
             getIncomes(),
             getOutcomes(),
+            getNetSavings(),
         ])
-        const months = Object.keys(incomeData.monthsData)
 
+        const months = Object.keys(incomeData.monthsData)
         const incomeAmounts = []
         const outcomeAmounts = []
+
         months.forEach((month) => {
             incomeAmounts.push(incomeData.monthsData[month] || 0)
             outcomeAmounts.push(outcomeData.monthsData[month] || 0)
@@ -102,27 +117,25 @@ const fetchDataAndUpdateChart = async () => {
         myChart.data.labels = months
         myChart.data.datasets[0].data = incomeAmounts
         myChart.data.datasets[1].data = outcomeAmounts
+        myChart.data.datasets[2].data = netSavings // Update net savings data
         myChart.data.timestamp = incomeData.timestamp
 
         myChart.update()
-
     } catch (error) {
         console.error('Error fetching or updating data:', error)
     }
 }
 
-
-fetchDataAndUpdateChart()
-
+// Update the chart with data every 5 seconds
 const updateInterval = setInterval(fetchDataAndUpdateChart, 5000)
-
 
 const ctx = document.getElementById('myChart').getContext('2d')
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: [],
-        datasets: [{
+        datasets: [
+            {
                 label: 'Income',
                 data: [],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -136,15 +149,22 @@ const myChart = new Chart(ctx, {
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1,
             },
+            {
+                label: 'Net Savings',
+                data: [],
+                backgroundColor: 'rgba(255, 159, 64, 0.2)', // Orange color
+                borderColor: 'rgba(255, 159, 64, 1)', // Orange color
+                borderWidth: 1,
+            },
         ],
     },
     options: {
         scales: {
             y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
+                beginAtZero: true,
+            },
+        },
+    },
+})
 
-fetchDataAndUpdateChart();
+fetchDataAndUpdateChart() // Fetch and update chart initially

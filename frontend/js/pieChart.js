@@ -1,10 +1,10 @@
-const refreshInterval = 5000; // Refresh every 5 seconds (adjust as needed)
+const refreshInterval = 5000 // Refresh every 5 seconds (adjust as needed)
 
 function updateChart() {
-    getOutcome();
+    getOutcome()
 }
 
-setInterval(updateChart, refreshInterval);
+setInterval(updateChart, refreshInterval)
 
 async function getOutcome() {
     try {
@@ -16,47 +16,58 @@ async function getOutcome() {
                     Authorization: `Bearer ${userToken}`,
                 },
             }
-        );
+        )
 
         if (!allOutcomes.ok) {
-            throw new Error('Failed to fetch outcomes');
+            throw new Error('Failed to fetch outcomes')
         }
 
-        const response = await allOutcomes.json();
-        const outcomeData = response.data;
+        const response = await allOutcomes.json()
+        let outcomeData = response.data
         // console.log(outcomeData);
 
         if (!Array.isArray(outcomeData)) {
             if (outcomeData.category && outcomeData.amount) {
-                outcomeData = [outcomeData];
+                outcomeData = [outcomeData]
             } else {
-                throw new Error('Outcome data is not in the expected format');
+                throw new Error('Outcome data is not in the expected format')
             }
         }
 
-        const chartData = [['Category', 'Amount']];
-        outcomeData.forEach(outcome => {
-            chartData.push([outcome.category, outcome.amount]);
-        });
+        const chartData = [['Category', 'Amount']]
+        outcomeData.forEach((outcome) => {
+            chartData.push([outcome.category, outcome.amount])
+        })
 
-        drawChart(chartData);
+        drawChart(chartData)
     } catch (error) {
-        console.error('Error fetching outcomes:', error);
+        console.error('Error fetching outcomes:', error)
     }
 }
 
 function drawChart(chartData) {
-    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.load('current', { packages: ['corechart'] })
     google.charts.setOnLoadCallback(() => {
-        const data = new google.visualization.arrayToDataTable(chartData);
+        const data = new google.visualization.arrayToDataTable(chartData)
 
         const options = {
-            title: 'Outcome Chart'
-        };
+            title: 'Outcome Chart',
+            backgroundColor: 'transparent',
+            titleTextStyle: {
+                color: '#444', // Change the text color here
+            },
+            legend: {
+                textStyle: {
+                    color: '#444', // Change the text color of legend here
+                },
+            },
+        }
 
-        const chart = new google.visualization.PieChart(document.getElementById('pieChart'));
-        chart.draw(data, options);
-    });
+        const chart = new google.visualization.PieChart(
+            document.getElementById('pieChart')
+        )
+        chart.draw(data, options)
+    })
 }
 
-getOutcome();
+getOutcome()
