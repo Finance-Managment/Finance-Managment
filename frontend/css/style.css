@@ -297,7 +297,6 @@ body.dark-theme {
 
 .button_outcome {
     display: inline-block;
-    float: right;
     background: linear-gradient(
         to right,
         var(--first-color),
@@ -314,7 +313,6 @@ body.dark-theme {
 
 .button_income {
     display: inline-block;
-    float: left;
     background: linear-gradient(
         to right,
         var(--first-color),
@@ -475,7 +473,7 @@ body.dark-theme {
 }
 
 ::placeholder {
-    color: white;
+    color: var(--title-color);
     text-align: center;
 }
 
@@ -694,11 +692,6 @@ body.dark-theme {
         align-items: center;
         column-gap: 3rem;
     }
-
-    .change-theme {
-        color: var(--title-color);
-    }
-
     .home__button {
         justify-self: flex-start;
     }
@@ -768,6 +761,7 @@ body.dark-theme {
     position: relative;
     justify-content: center;
     padding: 0;
+    color: var(--title-color);
 }
 
 #loginForm {
@@ -836,13 +830,9 @@ body.dark-theme {
     margin-top: 100px;
 }
 
-/* sign up form end */
-
-/* sign up form end */
-
 /*messages for user*/
 
-#message {
+#messages {
     position: relative;
     top: 50%;
     left: 50%;
@@ -855,11 +845,8 @@ body.dark-theme {
     color: red;
 }
 .caution {
-    color: yellow;
+    color: orangered;
 }
 .success {
     color: green;
-}
-.pieChart {
-    color: var(--title-color);
 }
