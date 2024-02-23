@@ -126,8 +126,8 @@ const fetchDataAndUpdateChart = async () => {
     }
 }
 
-// Update the chart with data every 5 seconds
-const updateInterval = setInterval(fetchDataAndUpdateChart, 5000)
+// Update the chart with data every 1 seconds
+const updateInterval = setInterval(fetchDataAndUpdateChart, 1000)
 
 const ctx = document.getElementById('myChart').getContext('2d')
 const myChart = new Chart(ctx, {
