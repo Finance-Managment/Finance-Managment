@@ -75,19 +75,14 @@
         <!--==================== MAIN ====================-->
         <main class="main">
             <div
-                id="pieChart"
-                style="
-                    width: 100%;
-                    max-width: 600px;
-                    height: 300px;
-                    margin-top: 50px;
-                "
+                id="chartsContainer"
                 class="pieChart"
-            ></div>
-
+            >
+                <div id="incomeChart" style="float: left; width: 100%; max-width: 600px; height: 500px"></div>
+                <div id="outcomeChart" style="float: right; width: 100%; max-width: 600px; height: 500px"></div>
+            </div>
             <section class="section admin__section"></section>
             <div id="messages"></div>
-
             <canvas id="myChart" style="width: 100%"></canvas>
         </main>
 
