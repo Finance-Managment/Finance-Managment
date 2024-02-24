@@ -512,7 +512,7 @@ body.dark-theme {
     height: 30px;
     border: 1px solid black;
     background-color: var(--first-color);
-    color: var(--white-color);
+    color: var(--title-color);
     width: 15rem;
 }
 
@@ -526,8 +526,8 @@ body.dark-theme {
         var(--first-color) 5px,
         var(--first-color-alt)
     );
-    color: var(--white-color);
     cursor: pointer;
+    color: var(--title-color);
 }
 
 .outcome__info,
