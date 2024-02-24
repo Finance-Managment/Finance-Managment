@@ -27,8 +27,13 @@ app.use('/api/incomes', require('./routes/incomeRoutes.js'))
 
 app.use('/api/outcomes', require('./routes/outcomeRoutes.js'))
 
+// savings
+
+app.use('/api/savings', require('./routes/savingRoutes.js'))
+
 app.use(errorHandler)
 
 app.listen(process.env.PORT, () =>
     console.log(`server is running on port ${process.env.PORT}`)
 )
+
