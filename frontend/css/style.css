@@ -69,6 +69,9 @@
         --smaller-font-size: 0.813rem;
     }
 }
+::placeholder {
+    color: var(--title-color);
+}
 
 /*=============== BASE ===============*/
 * {
@@ -440,8 +443,6 @@ body.dark-theme {
     scale: 0.95;
 }
 
-
-
 .income__info,
 .outcome__info,
 .saving__info {
@@ -458,11 +459,10 @@ body.dark-theme {
     padding: 5px;
     border-radius: 8px;
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--first-color);
+    background-color: var(--first-color-alt);
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
     width: 50%;
-
 }
 
 .saving__info > div {
@@ -498,7 +498,7 @@ body.dark-theme {
 
 .card > select {
     padding-top: 3px;
-    color: var(--white-color);
+    color: var(--title-color);
     border: 0;
     height: 30px;
     border-radius: 10px 0 0 10px;
@@ -535,7 +535,7 @@ body.dark-theme {
     margin-top: 5px;
 }
 ::placeholder {
-    color: var(--first-color);
+    color: var(--title-color);
     font-size: 0.85rem;
     opacity: 1; /* Firefox */
 }
