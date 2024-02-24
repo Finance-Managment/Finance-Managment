@@ -447,7 +447,7 @@ body.dark-theme {
 
 .saving__info > div {
     gap: 5px;
-=======
+}
 .outcome__info > div {
     display: flex;
 }
@@ -513,7 +513,7 @@ body.dark-theme {
     margin-top: 5px;
 }
 ::placeholder {
-    color: white;
+    color: var(--first-color);
     font-size: 0.85rem;
     opacity: 1; /* Firefox */
 }
