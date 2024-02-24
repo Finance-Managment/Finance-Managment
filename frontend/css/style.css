@@ -440,14 +440,6 @@ body.dark-theme {
 }
 
 .income__info > div,
-.outcome__info > div,
-.saving__info > div {
-    display: flex;
-}
-
-.saving__info > div {
-    gap: 5px;
-=======
 .outcome__info > div {
     display: flex;
 }
@@ -512,11 +504,7 @@ body.dark-theme {
 .income__info {
     margin-top: 5px;
 }
-::placeholder {
-    color: white;
-    font-size: 0.85rem;
-    opacity: 1; /* Firefox */
-}
+
 /*=============== FOOTER ===============*/
 .footer {
     background-color: var(--first-color);
