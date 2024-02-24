@@ -8,10 +8,10 @@ dashbtn.addEventListener('click', () => {
         window.location.href = 'index.html'
     }
 })
-// contactbtn.addEventListener('click', () => {
-//     if (UserID) {
-//         window.location.href = 'dashboard.html'
-//     } else {
-//         window.location.href = 'index.html'
-//     }
-// })
+contactbtn.addEventListener('click', () => {
+    if (UserID) {
+        window.location.href = 'contact.html'
+    } else {
+        window.location.href = 'index.html'
+    }
+})
