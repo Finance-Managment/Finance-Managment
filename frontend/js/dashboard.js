@@ -336,13 +336,13 @@ if (userRole == 'admin') {
                 total += Math.abs(el.amount)
                 amount.innerText = `Amount to save:  ${Math.abs(el.amount)}€`
                 amount.className = 'amount__info'
-                amount.className += ' saving'
+                amount.className += 'saving'
                 infoLine.append(description, months, amount)
                 savingInfo.append(infoLine)
             })
             const totalSaving = document.createElement('div')
             const totalCategory = document.createElement('div')
-            totalCategory.innerText = 'Total:'
+            totalCategory.innerText = 'Total amount to save:'
             const totalValue = document.createElement('div')
             totalValue.innerText = `Total:  ${total}€`
             totalValue.className = 'amount__info saving'
