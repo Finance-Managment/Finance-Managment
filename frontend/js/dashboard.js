@@ -262,5 +262,96 @@ if (userRole == 'admin') {
         getOutcomes()
         cardHolder.append(outcomeCard)
     })
+
+
+
+    showSavings.addEventListener('click', (event) => {
+        document.querySelectorAll('.card').forEach((el) => el.remove())
+        const savingCard = document.createElement('div')
+        savingCard.className = 'card'
+        const savingDescriptionField = document.createElement('input')
+        savingDescriptionField.placeholder = 'Enter Saving Goal'
+        savingDescriptionField.setAttribute('type', 'text')
+        const savingMonthsField = document.createElement('input')
+        savingMonthsField.placeholder = 'Enter Saving Months'
+        savingMonthsField.setAttribute('type', 'number')
+        const savingAmountField = document.createElement('input')
+        savingAmountField.placeholder = 'Enter Saving Amount'
+        savingAmountField.setAttribute('type', 'number')
+        const submitButton = document.createElement('button')
+        submitButton.innerText = 'Submit'
+        submitButton.addEventListener('click', (event) => {
+            const addSaving = async () => {
+                const sendSaving = fetch(
+                    'http://localhost:3000/api/savings',
+                    {
+                        method: 'POST',
+                        headers: {
+                            Authorization: `Bearer ${userToken}`,
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            description: `${savingDescriptionField.value}`,
+                            months: `${savingMonthsField.value}`,
+                            amount: `${Math.abs(savingAmountField.value)}`,
+                        }),
+                    }
+                )
+            }
+            addSaving()
+            console.log(savingDescriptionField.value, savingMonthsField.value, savingAmountField.value)
+            alert('Saving Added')
+            getSavings()
+            savingDescriptionField.value = ''
+            savingMonthsField.value = ''
+            savingAmountField.value = ''
+        })
+        savingCard.append(savingDescriptionField, savingMonthsField, savingAmountField, submitButton)
+        const getSavings = async () => {
+            const allSavings = await fetch(
+                `http://localhost:3000/api/savings/${userID}/all`,
+                {
+                    method: 'GET',
+                    headers: {
+                        Authorization: `Bearer ${userToken}`,
+                    },
+                }
+            )
+            document
+                .querySelectorAll('.saving__info')
+                .forEach((el) => el.remove())
+            let total = 0
+            const savingInfo = document.createElement('div')
+            savingInfo.className = 'saving__info'
+            const savingData = await allSavings.json()
+            savingData.data.forEach((el) => {
+                const infoLine = document.createElement('div')
+                const description = document.createElement('div')
+                description.innerText = `Goal: ${el.description}`
+                description.className = 'description__info'
+                const months = document.createElement('div')
+                months.innerText = `Time to save:  ${el.months} months`
+                months.className = 'months__info'
+                const amount = document.createElement('div')
+                total += Math.abs(el.amount)
+                amount.innerText = `Amount to save:  ${Math.abs(el.amount)}€`
+                amount.className = 'amount__info'
+                amount.className += ' saving'
+                infoLine.append(description, months, amount)
+                savingInfo.append(infoLine)
+            })
+            const totalSaving = document.createElement('div')
+            const totalCategory = document.createElement('div')
+            totalCategory.innerText = 'Total:'
+            const totalValue = document.createElement('div')
+            totalValue.innerText = `Total:  ${total}€`
+            totalValue.className = 'amount__info saving'
+            totalSaving.append(totalCategory, totalValue)
+            savingInfo.append(totalSaving)
+            savingCard.append(savingInfo)
+        }
+        getSavings()
+        cardHolder.append(savingCard)
+    })
 }
 
