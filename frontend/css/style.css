@@ -314,6 +314,7 @@ body.dark-theme {
     margin-right: 5rem;
     margin-left: 5rem;
     margin: 5rem 20px;
+    cursor: pointer;
 }
 
 /* Remove margin from the last button */
@@ -439,10 +440,29 @@ body.dark-theme {
     scale: 0.95;
 }
 
+
+
+.income__info,
+.outcome__info,
+.saving__info {
+    text-align: center;
+}
+
 .income__info > div,
 .outcome__info > div,
 .saving__info > div {
     display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    border: 3px solid var(--first-color);
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--first-color);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    width: 50%;
+
 }
 
 .saving__info > div {
@@ -485,6 +505,7 @@ body.dark-theme {
     border: 1px solid black;
     background-color: var(--first-color);
     width: 6rem;
+    cursor: pointer;
 }
 
 .card > input {
@@ -505,6 +526,7 @@ body.dark-theme {
         var(--first-color) 5px,
         var(--first-color-alt)
     );
+    cursor: pointer;
     color: var(--title-color);
 }
 
