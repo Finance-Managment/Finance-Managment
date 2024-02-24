@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema(
         },
         incomes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Income' }],
         outcomes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Outcome' }],
+        savings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Saving' }],
     },
     {
         timestamps: true,
