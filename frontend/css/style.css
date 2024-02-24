@@ -445,7 +445,7 @@ body.dark-theme {
     color: white;
     font-size: 0.85rem;
     opacity: 1; /* Firefox */
-  }
+}
 /*=============== FOOTER ===============*/
 .footer {
     background-color: var(--first-color);
