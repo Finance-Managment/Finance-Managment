@@ -341,12 +341,7 @@ if (userRole == 'admin') {
                 savingInfo.append(infoLine)
             })
             const totalSaving = document.createElement('div')
-            const totalCategory = document.createElement('div')
-            totalCategory.innerText = 'Total amount to save:'
-            const totalValue = document.createElement('div')
-            totalValue.innerText = `Total:  ${total}€`
-            totalValue.className = 'amount__info saving'
-            totalSaving.append(totalCategory, totalValue)
+            totalSaving.innerText = `Total amount to save:  ${total}€`
             savingInfo.append(totalSaving)
             savingCard.append(savingInfo)
         }

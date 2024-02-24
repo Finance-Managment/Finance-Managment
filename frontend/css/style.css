@@ -386,11 +386,15 @@ body.dark-theme {
 .remove__button:active {
     scale: 0.95;
 }
-.income__info > div {
+
+.income__info > div,
+.outcome__info > div,
+.saving__info > div {
     display: flex;
 }
-.outcome__info > div {
-    display: flex;
+
+.saving__info > div {
+    gap: 5px;
 }
 .amount__info {
     margin-left: 10px;
