@@ -17,6 +17,7 @@ const outcomeSchema = new mongoose.Schema(
                 'Healthcare',
                 'Education',
                 'Debt',
+                'Savings',
                 'Other',
             ],
             required: true,
