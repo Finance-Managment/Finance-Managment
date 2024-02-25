@@ -73,11 +73,10 @@ if (userRole == 'admin') {
     showIncome.className = 'button_income'
     const showOutcome = document.createElement('button')
     showOutcome.innerText = 'Show Outcome'
-    showOutcome.className = 'button'
+    showOutcome.className = 'button_outcome'
     const showSavings = document.createElement('button')
     showSavings.innerText = 'Show Savings'
-    showSavings.className = 'button'
-    showOutcome.className = 'button_outcome'
+    showSavings.className = 'button_savings'
     const cardHolder = document.createElement('div')
     section.append(showIncome, showOutcome, showSavings, cardHolder)
     const incomeCatagories = [
