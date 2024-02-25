@@ -534,11 +534,6 @@ body.dark-theme {
 .income__info {
     margin-top: 5px;
 }
-::placeholder {
-    color: var(--title-color);
-    font-size: 0.85rem;
-    opacity: 1; /* Firefox */
-}
 /*=============== FOOTER ===============*/
 .footer {
     background-color: var(--first-color);
