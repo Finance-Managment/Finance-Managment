@@ -1,5 +1,5 @@
 const dashbtn = document.getElementById('dashboard')
-const contactbtn = document.getElementById('contact')
+const contactbtn = document.querySelector('#contact-us')
 const UserID = localStorage.getItem('userID')
 dashbtn.addEventListener('click', () => {
     if (UserID) {
