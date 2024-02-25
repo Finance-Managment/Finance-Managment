@@ -29,17 +29,22 @@
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="../html/index.html" class="nav__logo">Financer</a>
+                <a id="dashboard" class="nav__logo">Financer</a>
 
                 <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
+                    <ul class="nav__list" id="top">
                         <li class="nav__item">
                             <a href="../html/about.html" class="nav__link"
                                 >About Us</a
                             >
                         </li>
                         <li class="nav__item">
-                            <a id="contact" class="button">Contact Us</a>
+                            <a
+                                id="contact"
+                                class="button"
+                                style="cursor: pointer"
+                                >Contact Us</a
+                            >
                         </li>
                     </ul>
                     <!-- Close button -->
@@ -188,9 +193,7 @@
                         About Your Problems
                     </h2>
 
-                    <a
-                        href="../html/contact.html"
-                        class="contact__button button"
+                    <a id="contact" class="contact__button button"
                         >Contact Me</a
                     >
                 </div>
@@ -209,9 +212,7 @@
                             >
                         </li>
                         <li>
-                            <a href="contact.html" class="footer__link"
-                                >Contact Us</a
-                            >
+                            <a id="contact" class="footer__link">Contact Us</a>
                         </li>
                     </ul>
                     <div class="footer__social">
