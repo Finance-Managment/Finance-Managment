@@ -522,6 +522,34 @@ body.dark-theme {
 .income__info {
     margin-top: 5px;
 }
+/*messages for user*/
+#messages {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    text-align: center;
+    font-size: var(--h2-font-size);
+}
+
+.warning {
+    color: red;
+}
+.caution {
+    color: orangered;
+}
+.success {
+    color: green;
+}
+
+@media only screen and (max-width: 1200px) {
+    #chartsContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 /*=============== FOOTER ===============*/
 .footer {
     background-color: var(--first-color);
@@ -773,7 +801,7 @@ body.dark-theme {
     }
 }
 
-/* sign in/sign up: form */
+/* sign in/sign up form    index.html*/
 .logReg__page {
     width: 250px;
     height: 500px;
@@ -830,7 +858,6 @@ body.dark-theme {
 
 #signupFormSubmit:hover {
     box-shadow: 0 0px 20px rgba(1, 110, 212, 0.5);
-    /* Adjust the shadow properties as needed */
 }
 
 .header__button {
@@ -851,33 +878,4 @@ body.dark-theme {
 
 #loginContact__box1 {
     margin-top: 100px;
-}
-
-/*messages for user*/
-
-#messages {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100px;
-    text-align: center;
-    font-size: var(--h2-font-size);
-}
-
-.warning {
-    color: red;
-}
-.caution {
-    color: orangered;
-}
-.success {
-    color: green;
-}
-
-@media only screen and (max-width: 1200px) {
-    #chartsContainer {
-        display: flex;
-        flex-direction: column;
-    }
 }
