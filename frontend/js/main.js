@@ -65,35 +65,45 @@ themeButton.addEventListener('click', () => {
 //this is signup form animation
 const topLogin = document.querySelector('#loginForm>h2')
 const formLogin = document.querySelector('#loginForm')
-const inputEmailFromLogin = document.querySelector("#loginFormEmailInput")
-const inputPassFromLogin = document.querySelector("#loginFormPasswordInput")
-if(inputEmailFromLogin){inputEmailFromLogin.style.display="none"}
-if(inputPassFromLogin){inputPassFromLogin.style.display="none"}
-if(topLogin){topLogin.style.cursor = 'pointer'}
-if(formLogin){formLogin.style.height = '51px'}
-if(topLogin){topLogin.addEventListener('click', (ev) => {
-    if (formLogin.style.height === '51px') {
-        formLogin.style.height = '90%'
-        formLogin.style.bottom = '10px'
-        inputEmailFromLogin.style.display="block"
-        inputPassFromLogin.style.display="block"
-    } else {
-        formLogin.style.height = '51px'
-        inputEmailFromLogin.style.display="none"
-        inputPassFromLogin.style.display="none"
-    }
-})
-const topSignup = document.querySelector('#signupForm>h2')
-topSignup.style.cursor = 'pointer'
-topSignup.addEventListener('click', (ev) => {
-    if (formLogin.style.height === '51px') {
-        formLogin.style.height = '90%'
-        formLogin.style.bottom = '10px'
-        inputEmailFromLogin.style.display="block"
-        inputPassFromLogin.style.display="block"
-    } else {
-        formLogin.style.height = '51px'
-        inputEmailFromLogin.style.display="none"
-        inputPassFromLogin.style.display="none"
-    }
-})}
+const inputEmailFromLogin = document.querySelector('#loginFormEmailInput')
+const inputPassFromLogin = document.querySelector('#loginFormPasswordInput')
+if (inputEmailFromLogin) {
+    inputEmailFromLogin.style.display = 'block'
+}
+if (inputPassFromLogin) {
+    inputPassFromLogin.style.display = 'block'
+}
+if (topLogin) {
+    topLogin.style.cursor = 'pointer'
+}
+if (formLogin) {
+    formLogin.style.height = '90%'
+}
+if (topLogin) {
+    topLogin.addEventListener('click', (ev) => {
+        if (formLogin.style.height === '51px') {
+            formLogin.style.height = '90%'
+            formLogin.style.bottom = '10px'
+            inputEmailFromLogin.style.display = 'block'
+            inputPassFromLogin.style.display = 'block'
+        } else {
+            formLogin.style.height = '51px'
+            inputEmailFromLogin.style.display = 'none'
+            inputPassFromLogin.style.display = 'none'
+        }
+    })
+    const topSignup = document.querySelector('#signupForm>h2')
+    topSignup.style.cursor = 'pointer'
+    topSignup.addEventListener('click', (ev) => {
+        if (formLogin.style.height === '51px') {
+            formLogin.style.height = '90%'
+            formLogin.style.bottom = '10px'
+            inputEmailFromLogin.style.display = 'block'
+            inputPassFromLogin.style.display = 'block'
+        } else {
+            formLogin.style.height = '51px'
+            inputEmailFromLogin.style.display = 'none'
+            inputPassFromLogin.style.display = 'none'
+        }
+    })
+}
