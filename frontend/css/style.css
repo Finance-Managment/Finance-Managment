@@ -236,7 +236,20 @@ body.dark-theme {
 .nav__close {
     color: var(--first-color);
 }
-
+/*Navigation for mobile devices*/
+@media screen and (max-width: 1150px) {
+    .nav__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        width: 100%;
+        box-shadow: 0 12px 24px var(--shadow-color);
+        padding-block: 5rem;
+        padding-inline: 4rem;
+        transition: top 0.4s;
+    }
+}
 .nav__list {
     display: flex;
     flex-direction: column;
@@ -824,19 +837,6 @@ body.dark-theme {
     }
 }
 
-@media screen and (max-width: 1150px) {
-    .nav__menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        background-color: var(--body-color);
-        width: 100%;
-        box-shadow: 0 12px 24px var(--shadow-color);
-        padding-block: 5rem;
-        padding-inline: 4rem;
-        transition: top 0.4s;
-    }
-}
 /* For large devices */
 @media screen and (min-width: 1150px) {
     .container {
