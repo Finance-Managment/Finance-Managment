@@ -35,9 +35,8 @@ This is a comprehensive full-stack finance management web app designed to empowe
 3. Set up the MongoDB database: Update the connection string in `.env` or `config.js`.
 
 ## Usage
-1. Navigate to `backend` directory in vscode terminal: `cd backend`
-2. Start the backend server: `npm run start` in the `backend` directory.
-3. Open the app in your browser: [IKLIJUOJAM PALEISTA LINK]
+1. Start the server: `npm run start` in the `root` directory.
+2. Open the app in your browser: [IKLIJUOJAM PALEISTA LINK]
 
 ## Configuration
 
