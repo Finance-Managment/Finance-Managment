@@ -1,13 +1,10 @@
 const getIncomes = async () => {
-    const allIncomes = await fetch(
-        `http://localhost:3000/api/incomes/${userID}/all`,
-        {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${userToken}`,
-            },
-        }
-    )
+    const allIncomes = await fetch(`/api/incomes/${userID}/all`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${userToken}`,
+        },
+    })
 
     const responseData = await allIncomes.json()
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' })
@@ -39,15 +36,12 @@ const getIncomes = async () => {
 }
 
 const getOutcomes = async () => {
-    const allOutcomes = await fetch(
-        `http://localhost:3000/api/outcomes/${userID}/all`,
-        {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${userToken}`,
-            },
-        }
-    )
+    const allOutcomes = await fetch(`/api/outcomes/${userID}/all`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${userToken}`,
+        },
+    })
 
     const responseData = await allOutcomes.json()
     const timestamp = new Date().toLocaleDateString('en-US', { month: 'long' })
