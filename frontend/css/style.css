@@ -217,7 +217,7 @@ body.dark-theme {
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
     transition: color 0.4s;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .nav__toggle,
@@ -803,6 +803,20 @@ body.dark-theme {
         margin-bottom: 10px;
     }
 }
+
+@media screen and (max-width: 1025px) {
+    .container-about {
+        width: 900px;
+    }
+
+    .about-number {
+        font-size: 64px;
+    }
+    .heading-tertiary {
+        font-size: 24px;
+    }
+}
+
 @media screen and (max-width: 1150px) {
     .nav__menu {
         position: fixed;
@@ -892,6 +906,14 @@ body.dark-theme {
     #chartsContainer {
         display: flex;
         flex-direction: column;
+    }
+
+    .container-about {
+        max-width: 1000px;
+    }
+
+    .about-text--content {
+        font-size: 20px;
     }
 }
 
