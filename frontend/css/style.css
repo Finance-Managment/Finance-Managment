@@ -350,6 +350,13 @@ body.dark-theme {
     font-weight: bold;
 }
 
+.about-heading {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 42px;
+}
+
 /*=============== CONTACT ===============*/
 .contact__container {
     padding-bottom: 4rem;
