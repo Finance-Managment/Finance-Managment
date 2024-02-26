@@ -9,15 +9,12 @@ if (userRole == 'admin') {
     section.append(getUsersButton)
     getUsersButton.addEventListener('click', (event) => {
         const getAllUsers = async () => {
-            const adminResponse = await fetch(
-                'http://localhost:3000/api/users/users',
-                {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Bearer ${userToken}`,
-                    },
-                }
-            )
+            const adminResponse = await fetch('/api/users/users', {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${userToken}`,
+                },
+            })
             document
                 .querySelectorAll('.user__list')
                 .forEach((el) => el.remove())
@@ -42,7 +39,7 @@ if (userRole == 'admin') {
                     removeButton.addEventListener('click', (event) => {
                         const deleteUser = async () => {
                             const deleteUserById = await fetch(
-                                `http://localhost:3000/api/users/${userId}`,
+                                `/api/users/${userId}`,
                                 {
                                     method: 'DELETE',
                                     headers: {
@@ -117,7 +114,7 @@ if (userRole == 'admin') {
         submitButton.innerText = 'Submit'
         submitButton.addEventListener('click', (event) => {
             const addIncome = async () => {
-                const sendIncome = fetch('http://localhost:3000/api/incomes', {
+                const sendIncome = fetch('/api/incomes', {
                     method: 'POST',
                     headers: {
                         Authorization: `Bearer ${userToken}`,
@@ -137,15 +134,12 @@ if (userRole == 'admin') {
         })
         incomeCard.append(dropdownSelect, incomeField, submitButton)
         const getIncomes = async () => {
-            const allIncomes = await fetch(
-                `http://localhost:3000/api/incomes/${userID}/all`,
-                {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Bearer ${userToken}`,
-                    },
-                }
-            )
+            const allIncomes = await fetch(`/api/incomes/${userID}/all`, {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${userToken}`,
+                },
+            })
             document
                 .querySelectorAll('.income__info')
                 .forEach((el) => el.remove())
@@ -205,20 +199,17 @@ if (userRole == 'admin') {
         submitButton.innerText = 'Submit'
         submitButton.addEventListener('click', (event) => {
             const addOutcome = async () => {
-                const sendOutcome = fetch(
-                    'http://localhost:3000/api/outcomes',
-                    {
-                        method: 'POST',
-                        headers: {
-                            Authorization: `Bearer ${userToken}`,
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            category: `${dropdownSelect.value}`,
-                            amount: `${Math.abs(outcomeField.value)}`,
-                        }),
-                    }
-                )
+                const sendOutcome = fetch('/api/outcomes', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${userToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        category: `${dropdownSelect.value}`,
+                        amount: `${Math.abs(outcomeField.value)}`,
+                    }),
+                })
             }
             addOutcome()
             console.log(dropdownSelect.value, outcomeField.value)
@@ -228,15 +219,12 @@ if (userRole == 'admin') {
         })
         outcomeCard.append(dropdownSelect, outcomeField, submitButton)
         const getOutcomes = async () => {
-            const allOutcomes = await fetch(
-                `http://localhost:3000/api/outcomes/${userID}/all`,
-                {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Bearer ${userToken}`,
-                    },
-                }
-            )
+            const allOutcomes = await fetch(`/api/outcomes/${userID}/all`, {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${userToken}`,
+                },
+            })
             document
                 .querySelectorAll('.outcome__info')
                 .forEach((el) => el.remove())
@@ -295,58 +283,60 @@ if (userRole == 'admin') {
         submitButton.innerText = 'Submit'
         submitButton.addEventListener('click', (event) => {
             const addSaving = async () => {
-                const sendSaving = fetch(
-                    'http://localhost:3000/api/savings',
-                    {
-                        method: 'POST',
-                        headers: {
-                            Authorization: `Bearer ${userToken}`,
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            description: `${savingDescriptionField.value}`,
-                            months: `${savingMonthsField.value}`,
-                            amount: `${Math.abs(savingAmountField.value)}`,
-                        }),
-                    }
-                )
+                const sendSaving = fetch('/api/savings', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${userToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        description: `${savingDescriptionField.value}`,
+                        months: `${savingMonthsField.value}`,
+                        amount: `${Math.abs(savingAmountField.value)}`,
+                    }),
+                })
             }
             const addSavingToOutcomes = async () => {
-                const sendOutcome = fetch(
-                    'http://localhost:3000/api/outcomes',
-                    {
-                        method: 'POST',
-                        headers: {
-                            Authorization: `Bearer ${userToken}`,
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            category: `Savings`,
-                            amount: `${~~(savingAmountField.value/savingMonthsField.value)}`,
-                        }),
-                    }
-                )
+                const sendOutcome = fetch('/api/outcomes', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${userToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        category: `Savings`,
+                        amount: `${~~(
+                            savingAmountField.value / savingMonthsField.value
+                        )}`,
+                    }),
+                })
             }
             addSavingToOutcomes()
             addSaving()
-            console.log(savingDescriptionField.value, savingMonthsField.value, savingAmountField.value)
+            console.log(
+                savingDescriptionField.value,
+                savingMonthsField.value,
+                savingAmountField.value
+            )
             alert('Saving Added')
             getSavings()
             savingDescriptionField.value = ''
             savingMonthsField.value = ''
             savingAmountField.value = ''
         })
-        savingCard.append(savingDescriptionField, savingMonthsField, savingAmountField, submitButton)
+        savingCard.append(
+            savingDescriptionField,
+            savingMonthsField,
+            savingAmountField,
+            submitButton
+        )
         const getSavings = async () => {
-            const allSavings = await fetch(
-                `http://localhost:3000/api/savings/${userID}/all`,
-                {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Bearer ${userToken}`,
-                    },
-                }
-            )
+            const allSavings = await fetch(`/api/savings/${userID}/all`, {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${userToken}`,
+                },
+            })
             document
                 .querySelectorAll('.saving__info')
                 .forEach((el) => el.remove())
@@ -364,8 +354,10 @@ if (userRole == 'admin') {
                 months.innerText = `Time to save:  ${el.months} months`
                 months.className = 'months__info'
                 const monthAmount = document.createElement('div')
-                monthsTotal += ~~(el.amount/el.months)
-                monthAmount.innerText = `This month amount:  ${~~(el.amount/el.months)}€`
+                monthsTotal += ~~(el.amount / el.months)
+                monthAmount.innerText = `This month amount:  ${~~(
+                    el.amount / el.months
+                )}€`
                 monthAmount.className = 'monthAmount__info'
                 const amount = document.createElement('div')
                 total += Math.abs(el.amount)
