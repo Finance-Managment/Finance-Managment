@@ -18,7 +18,7 @@
     --first-color-light: hsl(var(--hue), 40%, 80%);
     --title-color: hsl(var(--hue), 24%, 16%);
     --text-color: hsl(var(--hue), 8%, 45%);
-    --text-color-light: hsl(var(--hue), 8%, 60%);
+    --text-color-light: hsl(var(--hue), 8%, 90%);
     --white-color: hsl(var(--hue), 0%, 100%);
     --body-color: hsl(var(--hue), 0%, 100%);
     --container-color: hsl(var(--hue), 0%, 100%);
@@ -141,6 +141,7 @@ body.dark-theme {
     --body-color: hsl(var(--hue), 16%, 8%);
     --container-color: hsl(var(--hue), 16%, 12%);
     --shadow-color: hsla(var(--hue), 32%, 4%, 0.4);
+    --text-color-light: hsl(var(--hue), 8%, 20%);
 }
 
 /*========== 
@@ -333,13 +334,15 @@ body.dark-theme {
     font-family: 'Courier New', Courier, monospace;
     font-size: 86px;
     font-weight: 600;
-    color: #ddd;
+    /* color: #ddd; */
     margin-bottom: 12px;
+    color: var(--text-color-light);
 }
 
 .heading-tertiary {
     font-size: 32px;
     margin-bottom: 32px;
+    /* color: var(--title-color); */
 }
 
 .financer {
