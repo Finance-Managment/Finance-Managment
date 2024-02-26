@@ -237,7 +237,6 @@ body.dark-theme {
 
 /* Navigation for mobile devices */
 
-
 .nav__list {
     display: flex;
     flex-direction: column;
@@ -307,84 +306,6 @@ body.dark-theme {
     background-color: var(--first-color-alt);
     box-shadow: 0px 8px 24px hsla(var(--hue), 90%, 30%, 0.3);
     transform: scale(1.05);
-}
-/*===== sign in/sign up form    index.html=====*/
-.logReg__page {
-    width: 250px;
-    height: 500px;
-    display: flex;
-    flex-direction: column-reverse;
-    overflow: hidden;
-    position: relative;
-    justify-content: center;
-    padding: 0;
-    color: var(--title-color);
-}
-
-#loginForm {
-    position: absolute;
-    width: 250px;
-    bottom: 0px;
-    background-color: var(--first-color);
-    overflow: hidden;
-    z-index: 1;
-    transition: height 0.5s;
-    color: var(--white-color);
-    border-radius: 0 0 10px 10px;
-}
-
-#loginForm:hover {
-    box-shadow: 10px 0 20px rgba(1, 110, 212, 0.5);
-}
-
-#loginFormSubmit {
-    height: 62px;
-    margin-bottom: 50px;
-    width: 100%;
-}
-
-#signupForm {
-    position: absolute;
-    height: 90%;
-    gap: 20px;
-    margin-bottom: 49px;
-    width: 250px;
-}
-
-.home__data {
-    display: flex;
-    justify-content: center;
-}
-
-#signupFormSubmit {
-    min-width: 100%;
-    transform: none;
-    border-radius: 0 0 0 0;
-    border-radius: 5px 5px 0 0;
-}
-
-#signupFormSubmit:hover {
-    box-shadow: 0 0px 20px rgba(1, 110, 212, 0.5);
-}
-
-.header__button {
-    background: linear-gradient(
-        to right,
-        var(--first-color-alt),
-        var(--first-color)
-    );
-    cursor: pointer;
-}
-
-.login__form .section__title {
-    position: absolute;
-    width: 100%;
-    height: 51px;
-    z-index: 1;
-}
-
-#loginContact__box1 {
-    margin-top: 100px;
 }
 
 /*=============== CONTACT ===============*/
@@ -714,7 +635,6 @@ body.dark-theme {
     bottom: 3rem;
 }
 
-
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
@@ -722,7 +642,6 @@ body.dark-theme {
         margin-inline: 1rem;
     }
 }
-
 
 @media screen and (min-width: 768px) {
     .contact__page {
@@ -867,4 +786,83 @@ body.dark-theme {
         max-width: 1440px;
         margin-inline: auto;
     }
+}
+
+/* sign in/sign up form    index.html*/
+.logReg__page {
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    padding: 0;
+    color: var(--title-color);
+}
+
+#loginForm {
+    position: absolute;
+    width: 250px;
+    bottom: 0px;
+    background-color: var(--first-color);
+    overflow: hidden;
+    z-index: 1;
+    transition: height 0.5s;
+    color: var(--white-color);
+    border-radius: 0 0 10px 10px;
+}
+
+#loginForm:hover {
+    box-shadow: 10px 0 20px rgba(1, 110, 212, 0.5);
+}
+
+#loginFormSubmit {
+    height: 62px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+#signupForm {
+    position: absolute;
+    height: 90%;
+    gap: 20px;
+    margin-bottom: 49px;
+    width: 250px;
+}
+
+.home__data {
+    display: flex;
+    justify-content: center;
+}
+
+#signupFormSubmit {
+    min-width: 100%;
+    transform: none;
+    border-radius: 0 0 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+#signupFormSubmit:hover {
+    box-shadow: 0 0px 20px rgba(1, 110, 212, 0.5);
+}
+
+.header__button {
+    background: linear-gradient(
+        to right,
+        var(--first-color-alt),
+        var(--first-color)
+    );
+    cursor: pointer;
+}
+
+.login__form .section__title {
+    position: absolute;
+    width: 100%;
+    height: 51px;
+    z-index: 1;
+}
+
+#loginContact__box1 {
+    margin-top: 100px;
 }
