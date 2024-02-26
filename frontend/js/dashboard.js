@@ -278,9 +278,6 @@ if (userRole == 'admin') {
         getOutcomes()
         cardHolder.append(outcomeCard)
     })
-
-
-
     showSavings.addEventListener('click', (event) => {
         document.querySelectorAll('.card').forEach((el) => el.remove())
         const savingCard = document.createElement('div')
@@ -314,6 +311,23 @@ if (userRole == 'admin') {
                     }
                 )
             }
+            const addSavingToOutcomes = async () => {
+                const sendOutcome = fetch(
+                    'http://localhost:3000/api/outcomes',
+                    {
+                        method: 'POST',
+                        headers: {
+                            Authorization: `Bearer ${userToken}`,
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            category: `Savings`,
+                            amount: `${~~(savingAmountField.value/savingMonthsField.value)}`,
+                        }),
+                    }
+                )
+            }
+            addSavingToOutcomes()
             addSaving()
             console.log(savingDescriptionField.value, savingMonthsField.value, savingAmountField.value)
             alert('Saving Added')
@@ -336,6 +350,7 @@ if (userRole == 'admin') {
             document
                 .querySelectorAll('.saving__info')
                 .forEach((el) => el.remove())
+            let monthsTotal = 0
             let total = 0
             const savingInfo = document.createElement('div')
             savingInfo.className = 'saving__info'
@@ -348,16 +363,19 @@ if (userRole == 'admin') {
                 const months = document.createElement('div')
                 months.innerText = `Time to save:  ${el.months} months`
                 months.className = 'months__info'
+                const monthAmount = document.createElement('div')
+                monthsTotal += ~~(el.amount/el.months)
+                monthAmount.innerText = `This month amount:  ${~~(el.amount/el.months)}€`
+                monthAmount.className = 'monthAmount__info'
                 const amount = document.createElement('div')
                 total += Math.abs(el.amount)
-                amount.innerText = `Amount to save:  ${Math.abs(el.amount)}€`
+                amount.innerText = `Total amount:  ${Math.abs(el.amount)}€`
                 amount.className = 'amount__info'
-                amount.className += 'saving'
-                infoLine.append(description, months, amount)
+                infoLine.append(description, months, monthAmount, amount)
                 savingInfo.append(infoLine)
             })
             const totalSaving = document.createElement('div')
-            totalSaving.innerText = `Total amount to save:  ${total}€`
+            totalSaving.innerText = `This month amount:  ${monthsTotal}€\n Total amount left:  ${total}€`
             savingInfo.append(totalSaving)
             savingCard.append(savingInfo)
         }
