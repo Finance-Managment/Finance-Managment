@@ -300,7 +300,8 @@ body.dark-theme {
 }
 
 .button_outcome,
-.button_income {
+.button_income,
+.button_savings {
     display: inline-block;
     background: linear-gradient(
         to right,
@@ -327,7 +328,8 @@ body.dark-theme {
 
 .button:hover,
 .button_income:hover,
-.button_outcome:hover {
+.button_outcome:hover,
+.button_savings:hover {
     background-color: var(--first-color-alt);
     box-shadow: 0px 8px 24px hsla(var(--hue), 90%, 30%, 0.3);
     transform: scale(1.05);
@@ -468,6 +470,7 @@ body.dark-theme {
 .saving__info > div {
     gap: 5px;
 }
+
 .outcome__info > div {
     display: flex;
 }
