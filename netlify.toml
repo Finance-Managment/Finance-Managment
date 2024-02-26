@@ -1,0 +1,13 @@
+[build]
+  command = "npm install --prefix backend && npm run build --prefix frontend" # Install backend dependencies and build frontend
+  publish = "frontend/dist" # Directory to publish for the frontend
+
+[[redirects]]
+  # Redirect all requests to the frontend application
+  from = "/*"
+  to = "/frontend/index.html"
+  status = 200
+
+[dev]
+  # Specify the command to start the Netlify Dev server for local development
+  command = "npm run start --prefix backend"
