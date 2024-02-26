@@ -1,3 +1,4 @@
+// Function to draw income chart
 function drawIncomeChart(incomeData) {
     google.charts.load('current', { packages: ['corechart'] });
     google.charts.setOnLoadCallback(() => {
@@ -23,6 +24,7 @@ function drawIncomeChart(incomeData) {
     });
 }
 
+// Function to fetch income data
 async function getIncome() {
     try {
         const allIncome = await fetch(
@@ -70,11 +72,7 @@ async function getIncome() {
     }
 }
 
-function refreshCharts() {
-    getIncome();
-    getOutcome();
-}
-
+// Function to draw outcome chart
 function drawOutcomeChart(outcomeData) {
     google.charts.load('current', { packages: ['corechart'] });
     google.charts.setOnLoadCallback(() => {
@@ -100,6 +98,7 @@ function drawOutcomeChart(outcomeData) {
     });
 }
 
+// Function to fetch outcome data
 async function getOutcome() {
     try {
         const allOutcomes = await fetch(
@@ -147,11 +146,33 @@ async function getOutcome() {
     }
 }
 
-async function refreshChart() {
+// Function to refresh both income and outcome charts
+function refreshCharts() {
     getIncome();
     getOutcome();
 }
 
-getIncome();
-getOutcome();
-setInterval(refreshCharts, 1000); // Update the charts with data every 1 second
+// Function to reset the charts every month
+function resetChartsMonthly() {
+    // Reset the charts initially
+    refreshCharts();
+
+    // Set interval to refresh charts every month
+    setInterval(() => {
+        // Reset the charts
+        refreshCharts();
+
+        // Calculate milliseconds until the end of the current month
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const currentYear = currentDate.getFullYear();
+        const endOfMonth = new Date(currentYear, currentMonth + 1, 0);
+        const remainingMilliseconds = endOfMonth - currentDate;
+
+        // Set interval to refresh charts every month
+        setTimeout(resetChartsMonthly, remainingMilliseconds);
+    }, 1000); // Check every second for the end of the month
+}
+
+// Call the function to reset charts monthly
+resetChartsMonthly();
