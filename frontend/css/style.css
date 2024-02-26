@@ -323,6 +323,47 @@ body.dark-theme {
     box-shadow: 0px 8px 24px hsla(var(--hue), 90%, 30%, 0.3);
     transform: scale(1.05);
 }
+/*=============== ABOUT US ===============*/
+.container-about {
+    max-width: 1500px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    column-gap: 50px;
+    row-gap: 100px;
+    margin-bottom: 50px;
+}
+
+.about-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-text--content {
+    font-size: 24px;
+}
+
+.about-number {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 86px;
+    font-weight: 600;
+    color: #ddd;
+    margin-bottom: 12px;
+}
+
+.heading-tertiary {
+    font-size: 32px;
+    margin-bottom: 32px;
+    color: #333;
+}
+
+.financer {
+    color: green;
+    font-weight: bold;
+}
 
 /*=============== CONTACT ===============*/
 .contact__container {
