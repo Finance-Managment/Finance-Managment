@@ -334,7 +334,6 @@ body.dark-theme {
     font-family: 'Courier New', Courier, monospace;
     font-size: 86px;
     font-weight: 600;
-    /* color: #ddd; */
     margin-bottom: 12px;
     color: var(--text-color-light);
 }
@@ -342,7 +341,6 @@ body.dark-theme {
 .heading-tertiary {
     font-size: 32px;
     margin-bottom: 32px;
-    /* color: var(--title-color); */
 }
 
 .financer {
