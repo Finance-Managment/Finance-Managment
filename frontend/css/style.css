@@ -12,17 +12,6 @@
 
     /*========== Colors ==========*/
     /*Color mode HSL(hue, saturation, lightness)*/
-    /* 
-       Change favorite color
-       Default: hsl(198, 19%, 53%)
-       Orange: hsl(14, 90%, 60%) - Blue: hsl(210, 90%, 50%)
-       Pink: hsl(356, 100%, 65%) - Green: hsl(162, 90%, 40%)
- 
-       For more colors visit: https://colors.dopely.top/color-pedia
-       -> Choose any color 
-       -> Click on tab (Color Conversion)
-       -> Copy the color mode (HSL)
-   */
     --hue: 245;
     --first-color: hsl(var(--hue), 19%, 53%);
     --first-color-alt: hsl(var(--hue), 42%, 46%);
@@ -334,10 +323,6 @@ body.dark-theme {
     box-shadow: 0px 8px 24px hsla(var(--hue), 90%, 30%, 0.3);
     transform: scale(1.05);
 }
-
-/*=============== HOME ===============*/
-
-/*=============== WORK ===============*/
 
 /*=============== CONTACT ===============*/
 .contact__container {
@@ -785,7 +770,6 @@ body.dark-theme {
     .home {
         max-width: 1440px;
         margin-inline: auto;
-        border-right: 8px solid var(--first-color);
     }
 }
 
@@ -815,7 +799,7 @@ body.dark-theme {
 }
 
 #loginForm:hover {
-    box-shadow: 10px 0 20px rgba(228, 51, 51, 0.5);
+    box-shadow: 10px 0 20px rgba(1, 110, 212, 0.5);
 }
 
 #loginFormSubmit {
@@ -845,7 +829,7 @@ body.dark-theme {
 }
 
 #signupFormSubmit:hover {
-    box-shadow: 0 0px 20px rgba(221, 63, 63, 0.5);
+    box-shadow: 0 0px 20px rgba(1, 110, 212, 0.5);
     /* Adjust the shadow properties as needed */
 }
 
@@ -878,6 +862,7 @@ body.dark-theme {
     transform: translate(-50%, -50%);
     height: 100px;
     text-align: center;
+    font-size: var(--h2-font-size);
 }
 
 .warning {
