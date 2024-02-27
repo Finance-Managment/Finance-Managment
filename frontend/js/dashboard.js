@@ -69,13 +69,59 @@ showIncome.addEventListener('click', (event) => {
         getIncomes()
         incomeField.value = ''
     })
+} else {
+    const section = document.querySelector('.section')
+    const showIncome = document.createElement('button')
+    showIncome.innerText = 'Show Income'
+    showIncome.className = 'button_income'
+    showIncome.setAttribute('id', 'incomeSubmitBtn')
+    const showOutcome = document.createElement('button')
+    showOutcome.innerText = 'Show Outcome'
+    showOutcome.className = 'button_outcome'
+    showOutcome.setAttribute('id', 'outcomeSubmitBtn')
+    const showSavings = document.createElement('button')
+    showSavings.innerText = 'Show Savings'
+    showSavings.className = 'button_savings'
+    showSavings.setAttribute('id', 'savingsSubmitBtn')
+    const cardHolder = document.createElement('div')
+    section.append(showIncome, showOutcome, showSavings, cardHolder)
+    const incomeCatagories = [
+        'Salary',
+        'Investments',
+        'Business',
+        'Freelance',
+        'Rent',
+        'Royalties',
+        'Other',
+    ]
+    const outcomeCatagories = [
+        'Rent',
+        'Utilities',
+        'Food',
+        'Transportation',
+        'Entertainment',
+        'Healthcare',
+        'Education',
+        'Debt',
+        'Other',
+    ]
+    showIncome.addEventListener('click', (event) => {
+        document.querySelectorAll('.card').forEach((el) => el.remove())
+        const incomeCard = document.createElement('div')
+        incomeCard.className = 'card'
+        const dropdownSelect = document.createElement('select')
+        incomeCatagories.forEach((el) => {
+            const dropdownOption = document.createElement('option')
+            dropdownOption.setAttribute('value', el)
+            dropdownOption.innerText = el
+            dropdownSelect.append(dropdownOption)
     incomeCard.append(dropdownSelect, incomeField, submitButton)
     const getIncomes = async () => {
         const allIncomes = await fetch(`/api/incomes/${userID}/all`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${userToken}`,
-            },
+            }, main
         })
         document.querySelectorAll('.income__info').forEach((el) => el.remove())
         let total = 0

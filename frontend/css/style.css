@@ -664,8 +664,8 @@ body.dark-theme {
 .warning {
     color: red;
 }
-.caution {
-    color: orangered;
+.attention {
+    color: rgb(236, 84, 29);
 }
 .success {
     color: green;
