@@ -31,13 +31,12 @@ This is a comprehensive full-stack finance management web app designed to empowe
 ## Installation
 
 1. Clone the repository: `git clone [https://github.com/Finance-Managment/Finance-Managment.git]`
-2. Install dependencies: `npm install` (for frontend and backend)
+2. Install dependencies via terminal command: `npm install`
 3. Set up the MongoDB database: Update the connection string in `.env` or `config.js`.
 
 ## Usage
-1. Navigate to `backend` directory in vscode terminal: `cd backend`
-2. Start the backend server: `npm run start` in the `backend` directory.
-3. Open the app in your browser: [IKLIJUOJAM PALEISTA LINK]
+1. Start the server: `npm run start` in the `root` directory.
+2. Open the app in your browser: [IKLIJUOJAM PALEISTA LINK]
 
 ## Configuration
 
@@ -47,7 +46,7 @@ This is a comprehensive full-stack finance management web app designed to empowe
 ## Contributors
 
 - UGNIUS USCILAS
-- KESTUTIS GIRDZIUNA
+- KESTUTIS GIRDZIUNAS
 - LUKAS LAPIENIS
 - KAROLIS LAPIENIS
 - LAURYNAS JOKSA
