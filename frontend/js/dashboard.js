@@ -281,23 +281,10 @@ if (userRole == 'admin') {
         savingAmountField.setAttribute('type', 'number')
         const submitButton = document.createElement('button')
         submitButton.innerText = 'Submit'
-        submitButton.addEventListener('click', (event) => {
-            const addSaving = async () => {
-                const sendSaving = fetch('/api/savings', {
-                    method: 'POST',
-                    headers: {
-                        Authorization: `Bearer ${userToken}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        description: `${savingDescriptionField.value}`,
-                        months: `${savingMonthsField.value}`,
-                        amount: `${Math.abs(savingAmountField.value)}`,
-                    }),
-                })
-            }
+        submitButton.addEventListener('click', async (event) => {
+            let outcomesRef
             const addSavingToOutcomes = async () => {
-                const sendOutcome = fetch('/api/outcomes', {
+                const sendOutcome = await fetch('/api/outcomes', {
                     method: 'POST',
                     headers: {
                         Authorization: `Bearer ${userToken}`,
@@ -310,8 +297,24 @@ if (userRole == 'admin') {
                         )}`,
                     }),
                 })
+                outcomesRef = (await sendOutcome.json())._id
             }
-            addSavingToOutcomes()
+            await addSavingToOutcomes()
+            const addSaving = async () => {
+                const sendSaving = await fetch('/api/savings', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${userToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        description: `${savingDescriptionField.value}`,
+                        months: `${savingMonthsField.value}`,
+                        amount: `${Math.abs(savingAmountField.value)}`,
+                        outcomesRef: `${outcomesRef}`
+                    }),
+                })
+            }
             addSaving()
             console.log(
                 savingDescriptionField.value,
@@ -363,7 +366,27 @@ if (userRole == 'admin') {
                 total += Math.abs(el.amount)
                 amount.innerText = `Total amount:  ${Math.abs(el.amount)}€`
                 amount.className = 'amount__info'
-                infoLine.append(description, months, monthAmount, amount)
+                const deleteButtonContainer = document.createElement('div')
+                const deleteButton = document.createElement('button')
+                deleteButton.type = 'submit'
+                deleteButton.innerText = 'delete'
+                deleteButton.addEventListener('click', async () => {
+                    const deleteSaving = await fetch(`api/savings/${el._id}`, {
+                        method: "DELETE",
+                        headers: {
+                            Authorization: `Bearer ${userToken}`,
+                        },
+                    })
+                    const deleteOutcome = await fetch(`api/outcomes/${el.outcomesRef}`, {
+                        method: "DELETE",
+                        headers: {
+                            Authorization: `Bearer ${userToken}`,
+                        },
+                    })
+                    infoLine.remove()
+                })
+                deleteButtonContainer.append(deleteButton)
+                infoLine.append(description, months, monthAmount, amount, deleteButtonContainer)
                 savingInfo.append(infoLine)
             })
             const totalSaving = document.createElement('div')
