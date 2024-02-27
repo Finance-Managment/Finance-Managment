@@ -16,6 +16,7 @@ const createSaving = asyncHandler(async (req, res) => {
         description: req.body.description,
         months: req.body.months,
         amount: req.body.amount,
+        outcomesRef: req.body.outcomesRef,
         user: req.user._id,
     })
 

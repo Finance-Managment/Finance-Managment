@@ -14,6 +14,11 @@ const savingSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
+        outcomesRef: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Outcome',
+            required: true,
+        },
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
