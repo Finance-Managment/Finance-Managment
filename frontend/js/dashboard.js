@@ -76,7 +76,6 @@ showIncome.addEventListener('click', (event) => {
             headers: {
                 Authorization: `Bearer ${userToken}`,
             },
-            main,
         })
         document.querySelectorAll('.income__info').forEach((el) => el.remove())
         let total = 0
